@@ -42,7 +42,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable NetworkManager
 
 # Download and place the user-setup in user home
-curl -sL https://raw.githubusercontent.com/timothycates/dotfiles/main/ArchInstall/user-setup.sh -o /home/$adminuser/user-setup.sh
+curl -sL https://raw.githubusercontent.com/timothycates/ArchInstall/main/user-setup.sh -o /home/$adminuser/user-setup.sh
 chmod a+x /home/$adminuser/user-setup.sh
 cd /home/$adminuser/
 

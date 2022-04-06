@@ -22,7 +22,7 @@ pacstrap /mnt grub efibootmgr neovim networkmanager zsh
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-curl -sL https://raw.githubusercontent.com/timothycates/dotfiles/main/ArchInstall/root-setup.sh -o /mnt/root-setup.sh
+curl -sL https://raw.githubusercontent.com/timothycates/ArchInstall/main/root-setup.sh -o /mnt/root-setup.sh
 chmod a+x /mnt/root-setup.sh
 
 arch-chroot /mnt /bin/bash
