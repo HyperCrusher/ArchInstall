@@ -55,6 +55,10 @@ sudo systemctl enable tlp
 sudo systemctl enable reflector.timer
 sudo systemctl enable libvirtd
 
+# Cleanup install script
+sudo rm user-setup.sh
+sudo rm /root-setup.sh
+
 # Done
 clear
 echo "Done! Exit the chroot, umount -a and reboot. :)"
