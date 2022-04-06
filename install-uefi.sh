@@ -3,10 +3,15 @@
 # Turn ntp on
 timedatectl set-ntp true
 
-# Refresh keys, takes time remove if short on time
-pacman-key --init
-pacman-key --populate archlinux
-pacman-key --refresh-keys
+# Refresh keys
+read -p "Refresh keyring? Can take a long time. " -n 1 -r
+echo    # (optional) move to a new line
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    pacman-key --init
+    pacman-key --populate archlinux
+    pacman-key --refresh-keys
+fi
 
 # Base Install
 pacstrap /mnt base linux linux-headers linux-firmware sof-firmware base-devel 
