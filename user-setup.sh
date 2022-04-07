@@ -27,10 +27,10 @@ cd nerd-fonts
 ./install.sh
 
 # Install Essentials
-yay -S alsa-utils arandr avahi bluez bluez-libs bluez-utils bridge-utils ca-certificates ca-certificates-mozilla ca-certificates-utils curl exa ffmpeg fontconfig git hidapi iptables-nft iputils nfs-utils ntfs-3g openssh openssl pacman-contrib pacman-mirrorlist pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-media-session python-virtualenv xdg-user-dirs xdg-utils xorg-input xorg-server xorg-xsetroot xorg-xinit
+yay -S alsa-utils arandr avahi bluez bluez-libs bluez-utils bridge-utils ca-certificates ca-certificates-mozilla ca-certificates-utils curl exa ffmpeg fontconfig git hidapi iptables-nft iputils nfs-utils ntfs-3g openssh openssl pacman-contrib pacman-mirrorlist pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-media-session python-virtualenv xdg-user-dirs xdg-utils xorg-xinput xorg-server xorg-xsetroot xorg-xinit
 
 ## My preferred apps
-yay -S --noconfirm alacritty discord obs-studio github-cli ranger stow vivaldi vivalid-ffmpeg-codecs scrot pfetch-btw tty-clock-git
+yay -S --noconfirm alacritty discord obs-studio github-cli ranger stow vivaldi vivaldi-ffmpeg-codecs scrot pfetch-btw tty-clock-git
 
 ## Virtual machines
 yay -S --noconfirm qemu qemu-arch-extra virt-manager
