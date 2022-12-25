@@ -6,7 +6,7 @@ timedatectl set-ntp true
 # Refresh keys
 read -p "Refresh keyring? Can take a long time. " -n 1 -r
 echo    # (optional) move to a new line
-if [[ ! $REPLY =~ ^[Yy]$ ]]
+if [[ $REPLY =~ ^[Yy]$ ]]
 then
     pacman-key --init
     pacman-key --populate archlinux
@@ -17,7 +17,7 @@ fi
 pacstrap /mnt base linux linux-headers linux-firmware sof-firmware base-devel 
 
 # Install microcode updates
-pacstrap /mnt intel-ucode
+# pacstrap /mnt intel-ucode
 
 # Install libvirt so user can inherit libvirt group
 pacstrap /mnt virt-install 
