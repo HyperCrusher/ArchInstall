@@ -42,7 +42,7 @@ yay -S --noconfirm qemu-full virt-manager
 yay -S --noconfirm hplip 
 
 ## Desktop Environment
-yay -S --noconfirm bspwm cairo nitrogen paper-icon-theme picom-ibhagwan-git polybar rofi sxhkd tmux dunst
+yay -S --noconfirm bspwm nitrogen picom-git polybar rofi sxhkd tmux dunst
 
 # Remove yay and nerd font folders
 echo "removing build packages"
