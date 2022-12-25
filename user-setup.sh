@@ -56,7 +56,6 @@ sudo rm -r yay nerd-fonts
 sudo systemctl enable bluetooth 
 sudo systemctl enable sshd
 sudo systemctl enable avahi-daemon
-sudo systemctl enable tlp
 sudo systemctl enable reflector.timer
 sudo systemctl enable libvirtd
 
