@@ -41,6 +41,9 @@ yay -S --noconfirm qemu-full virt-manager
 ## Printers
 yay -S --noconfirm hplip 
 
+## Email shit
+yay -S --noconfirm neomutt isync
+
 ## Desktop Environment
 yay -S --noconfirm bspwm nitrogen picom-git tmux 
 
