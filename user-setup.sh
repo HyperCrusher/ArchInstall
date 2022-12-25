@@ -26,8 +26,11 @@ git clone --depth 1 https://www.github.com/ryanoasis/nerd-fonts
 cd nerd-fonts
 ./install.sh
 
+#jj
+
+
 # Install Essentials
-yay -S alsa-utils arandr avahi bluez bluez-libs bluez-utils bridge-utils ca-certificates ca-certificates-mozilla ca-certificates-utils curl exa ffmpeg fontconfig git hidapi iptables-nft iputils man nfs-utils ntfs-3g numlockx openssh openssl pacman-contrib pacman-mirrorlist pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-media-session python-virtualenv xclip xdg-user-dirs xdg-utils xorg-xinput xorg-server xorg-xsetroot xorg-xinit
+yay -S abook alsa-utils alsa-firmware alsa-plugins arandr avahi bluez bluez-libs bluez-utils bridge-utils curl exa ffmpeg fontconfig git hidapi iptables-nft iputils man nfs-utils ntfs-3g numlockx openssh openssl pacman-contrib pacman-mirrorlist pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-media-session python-virtualenv xclip xdg-user-dirs xdg-utils xorg-xinput xorg-server xorg-xsetroot xorg-xinit
 
 ## My preferred apps
 yay -S --noconfirm alacritty discord obs-studio github-cli ranger stow vivaldi vivaldi-ffmpeg-codecs scrot pfetch-btw tty-clock-git
