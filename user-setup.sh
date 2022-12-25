@@ -45,7 +45,7 @@ yay -S --noconfirm hplip
 yay -S --noconfirm neomutt isync
 
 ## Desktop Environment
-yay -S --noconfirm bspwm nitrogen picom-git tmux 
+yay -S --noconfirm sddm awesome nitrogen picom-git tmux 
 
 # Remove yay and nerd font folders
 echo "removing build packages"
