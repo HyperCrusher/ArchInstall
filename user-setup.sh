@@ -42,7 +42,7 @@ yay -S --noconfirm qemu-full virt-manager
 yay -S --noconfirm hplip 
 
 ## Email shit
-yay -S --noconfirm neomutt isync
+yay -S --noconfirm neomutt isync msmtp pass pam-gnupg notmuch urlview 
 
 ## Desktop Environment
 yay -S --noconfirm sddm awesome nitrogen picom-git tmux 
