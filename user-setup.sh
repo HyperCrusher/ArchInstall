@@ -30,7 +30,7 @@ cd nerd-fonts
 
 
 # Install Essentials
-yay -S abook alsa-utils alsa-firmware alsa-plugins arandr avahi bat bluez bluez-utils bridge-utils curl downgrade exa ffmpeg ffmpegthumbnailer fontconfig git hidapi iptables-nft iputils jq man nfs-utils ntfs-3g numlockx openssh openssl pacman-contrib pacman-mirrorlist pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-media-session python-virtualenv rebuild-detector ripgrep unzip xclip xdg-user-dirs xdg-utils xorg-xinput xorg-server xorg-xsetroot xorg-xinit
+yay -S abook alsa-utils alsa-firmware alsa-plugins arandr avahi bat bluez bluez-utils bridge-utils curl downgrade exa ffmpeg ffmpegthumbnailer fontconfig git hidapi iptables-nft iputils jq man nfs-utils ntfs-3g numlockx openssh openssl pacman-contrib pacman-mirrorlist pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-media-session python-virtualenv rebuild-detector ripgrep reflector unzip xclip xdg-user-dirs xdg-utils xorg-xinput xorg-server xorg-xsetroot xorg-xinit
 
 ## My preferred apps
 yay -S --noconfirm alacritty discord obs-studio github-cli ranger stow vivaldi vivaldi-ffmpeg-codecs scrot nitch lazygit lynx qbittorrent
@@ -54,7 +54,6 @@ sudo rm -r yay nerd-fonts
 
 # Enable services
 sudo systemctl enable bluetooth 
-sudo systemctl enable cups.service
 sudo systemctl enable sshd
 sudo systemctl enable avahi-daemon
 sudo systemctl enable tlp
