@@ -36,7 +36,7 @@ yay -S abook alsa-utils alsa-firmware alsa-plugins arandr avahi bat bluez bluez-
 yay -S --noconfirm alacritty discord obs-studio github-cli ranger stow vivaldi vivaldi-ffmpeg-codecs scrot nitch 
 
 ## Virtual machines
-yay -S --noconfirm qemu qemu-arch-extra virt-manager
+yay -S --noconfirm qemu-full virt-manager
 
 ## Printers
 yay -S --noconfirm hplip 
