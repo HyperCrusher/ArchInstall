@@ -23,7 +23,7 @@ pacstrap /mnt base linux linux-headers linux-firmware sof-firmware base-devel
 pacstrap /mnt virt-install 
 
 # My preffered extras
-pacstrap /mnt grub efibootmgr neovim networkmanager zsh 
+pacstrap /mnt refind-efi efibootmgr neovim networkmanager network-manager-applet zsh 
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
