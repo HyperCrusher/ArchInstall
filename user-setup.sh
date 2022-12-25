@@ -26,9 +26,6 @@ git clone --depth 1 https://www.github.com/ryanoasis/nerd-fonts
 cd nerd-fonts
 ./install.sh
 
-#jj
-
-
 # Install Essentials
 yay -S abook alsa-utils alsa-firmware alsa-plugins arandr avahi bat bluez bluez-utils bridge-utils curl downgrade exa ffmpeg ffmpegthumbnailer fontconfig git hidapi iptables-nft iputils jq man nfs-utils ntfs-3g numlockx openssh openssl pacman-contrib pacman-mirrorlist pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-media-session python-virtualenv rebuild-detector ripgrep unzip xclip xdg-user-dirs xdg-utils xorg-xinput xorg-server xorg-xsetroot xorg-xinit
 
