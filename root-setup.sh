@@ -36,6 +36,7 @@ sed --in-place 's/^#\s*\(%wheel\s\+ALL=(ALL:ALL)\s\+ALL\)/\1/' /etc/sudoers
 
 # Enable multilib for pacman
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
+pacman -Syyu
 
 # Install bootloader
 echo "Input efi block device (eg. /dev/sda1)"
