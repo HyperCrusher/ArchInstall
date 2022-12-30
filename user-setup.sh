@@ -25,7 +25,7 @@ cd nerd-fonts
 ./install.sh
 
 # Install Essentials
-yay -S abook alsa-utils alsa-firmware alsa-plugins arandr avahi bat bluez bluez-utils bridge-utils curl downgrade exa ffmpeg ffmpegthumbnailer fontconfig git hidapi iptables-nft iputils jq man nfs-utils ntfs-3g numlockx openssh openssl pacman-contrib pacman-mirrorlist pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-media-session python-virtualenv rebuild-detector ripgrep sddm unzip xclip xdg-user-dirs xdg-utils xorg-xinput xorg-server xorg-xsetroot xorg-xinit
+yay -S alsa-utils alsa-firmware alsa-plugins arandr avahi bat bluez bluez-utils bridge-utils curl downgrade exa ffmpeg ffmpegthumbnailer fontconfig git hidapi iptables-nft iputils jq man nfs-utils ntfs-3g numlockx openssh openssl pacman-contrib pacman-mirrorlist pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-media-session python-virtualenv rebuild-detector ripgrep sddm unzip xclip xdg-user-dirs xdg-utils xorg-xinput xorg-server xorg-xsetroot xorg-xinit
 
 ## My preferred apps
 yay -S --noconfirm alacritty discord github-cli ranger stow vivaldi vivaldi-ffmpeg-codecs scrot nitch lazygit lynx qbittorrent
@@ -37,7 +37,7 @@ yay -S --noconfirm qemu-full virt-manager
 yay -S --noconfirm hplip 
 
 ## Email
-yay -S --noconfirm neomutt isync msmtp pass pam-gnupg notmuch urlview 
+yay -S --noconfirm abook neomutt isync msmtp pass pam-gnupg notmuch urlview 
 
 ## Desktop Environment
 yay -S --noconfirm awesome picom-git
