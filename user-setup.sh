@@ -42,7 +42,7 @@ yay -S --noconfirm hplip
 yay -S --noconfirm neomutt isync msmtp pass pam-gnupg notmuch urlview 
 
 ## Desktop Environment
-yay -S --noconfirm sddm awesome nitrogen picom-git tmux 
+yay -S --noconfirm sddm awesome picom-git tmux 
 
 # Remove yay and nerd font folders
 echo "removing build packages"
@@ -50,6 +50,7 @@ cd ~
 sudo rm -r yay nerd-fonts
 
 # Enable services
+sudo systemctl enable sddm
 sudo systemctl enable bluetooth 
 sudo systemctl enable sshd
 sudo systemctl enable avahi-daemon
