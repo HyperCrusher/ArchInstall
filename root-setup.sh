@@ -34,6 +34,9 @@ passwd $adminuser
 # Edit sudoers file
 sed --in-place 's/^#\s*\(%wheel\s\+ALL=(ALL:ALL)\s\+ALL\)/\1/' /etc/sudoers
 
+# Enable multilib for pacman
+sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
+
 # Install bootloader
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck --removable
 grub-mkconfig -o /boot/grub/grub.cfg
