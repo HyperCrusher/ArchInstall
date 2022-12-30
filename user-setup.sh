@@ -11,7 +11,6 @@ yay -S --noconfirm reflector
 sudo reflector --latest 50 --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist
 yay -Syy --noconfirm
 
-
 # Install Fonts
 yay -S --noconfirm adobe-source-code-pro-fonts cantarell-fonts ttf-ms-fonts ttf-opensans
 
@@ -27,6 +26,12 @@ cd nerd-fonts
 # Install Essentials
 yay -S alsa-utils alsa-firmware alsa-plugins arandr avahi bat bluez bluez-utils bridge-utils curl downgrade exa ffmpeg ffmpegthumbnailer fontconfig git hidapi iptables-nft iputils jq man nfs-utils ntfs-3g numlockx openssh openssl pacman-contrib pacman-mirrorlist pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-media-session python-virtualenv rebuild-detector ripgrep sddm unzip xdg-user-dirs xdg-utils xorg-xinput 
 
+## Desktop Environment
+yay -S --noconfirm awesome picom-git
+
+# Display Server
+yay -S --noconfirm xclip xorg-server xorg-xsetroot xorg-xinit
+
 ## My preferred apps
 yay -S --noconfirm alacritty discord github-cli ranger stow vivaldi vivaldi-ffmpeg-codecs scrot nitch lazygit lynx qbittorrent
 
@@ -38,12 +43,6 @@ yay -S --noconfirm hplip
 
 ## Email
 yay -S --noconfirm abook neomutt isync msmtp pass pam-gnupg notmuch urlview 
-
-## Desktop Environment
-yay -S --noconfirm awesome picom-git
-
-# Display Server
-yay -S --noconfirm xclip xorg-server xorg-xsetroot xorg-xinit
 
 # Remove yay and nerd font folders
 echo "removing build packages"
