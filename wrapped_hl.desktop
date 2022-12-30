@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Hyprland (nvidia)
+Comment=An intelligent dynamic tiling Wayland compositor
+Exec=wrappedhl
+Type=Application
