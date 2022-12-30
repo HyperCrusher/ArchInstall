@@ -56,6 +56,20 @@ read ignored
 
 nvim /boot/EFI/BOOT/refind.conf
 
+
+# Install nvidia drivers
+pacman -S nvidia-dkms nvidia-utils nvidia-settings lib32-nvidia-utils
+echo "Opening refind_linux.conf. add nvidia_drm.modeset=1 to end of entry inside the \"s (go ahead and add quiet too)"
+read ignored
+nvim /boot/refind_linux.conf
+
+# Add nvidia early-loading modules to initramfs
+sed -i 's/^MODULES=()/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/g' /etc/mkinitcpio.conf
+mkinitcpio -P
+
+# Create a pacman hook to update initramfs after a nvidia upgrade
+curl -sL https://raw.githubusercontent.com/timothycates/ArchInstaller/main/nvidia.hook -o /etc/pacman.d/hooks/nvidia.hook
+
 # Enable network manager
 systemctl enable NetworkManager
 

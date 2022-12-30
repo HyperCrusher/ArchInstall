@@ -11,8 +11,6 @@ yay -S --noconfirm reflector
 sudo reflector --latest 50 --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist
 yay -Syy --noconfirm
 
-# Install Nvidia
-yay -S --noconfirm nvidia nvidia-utils nvidia-settings
 
 # Install Fonts
 yay -S --noconfirm adobe-source-code-pro-fonts cantarell-fonts ttf-ms-fonts ttf-opensans
