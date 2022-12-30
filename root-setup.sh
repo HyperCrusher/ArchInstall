@@ -67,6 +67,8 @@ nvim /boot/refind_linux.conf
 sed -i 's/^MODULES=()/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/g' /etc/mkinitcpio.conf
 mkinitcpio -P
 
+echo "options nvidia-drm modeset=1" >> /etc/modprove.d/nvidia.conf
+
 # Create a pacman hook to update initramfs after a nvidia upgrade
 curl -sL https://raw.githubusercontent.com/timothycates/ArchInstaller/main/nvidia.hook -o /etc/pacman.d/hooks/nvidia.hook
 
