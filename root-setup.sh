@@ -38,8 +38,22 @@ sed --in-place 's/^#\s*\(%wheel\s\+ALL=(ALL:ALL)\s\+ALL\)/\1/' /etc/sudoers
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 
 # Install bootloader
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck --removable
-grub-mkconfig -o /boot/grub/grub.cfg
+echo "Input efi block device (eg. /dev/sda1)"
+read efiblock
+
+refind-install --usedefault $efiblock --alldrivers
+mkrlconf
+
+echo "Opening refind_linux.conf. Remove all archiso entries from the file (enter to continue)"
+read ignored
+
+nvim /boot/refind_linux.conf
+
+
+echo "Opening refind.conf. replace options uuid with $efiblock under 'menuentry \"Arch Linux\""
+read ignored
+
+nvim /boot/EFI/BOOT/refind.conf
 
 # Enable network manager
 systemctl enable NetworkManager
