@@ -1,4 +1,5 @@
 confirm() {
+  clear
   local _prompt _default _response
  
   if [ "$1" ]; then _prompt="$1"; else _prompt="Are you sure"; fi
