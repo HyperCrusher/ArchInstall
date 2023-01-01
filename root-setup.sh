@@ -27,7 +27,7 @@ passwd
 # Setup a admin user
 echo "Input an admin username:"
 read adminuser
-useradd -m -g users -G libvirt,wheel $adminuser
+useradd --badname -m -g users -G libvirt,wheel $adminuser
 echo "Input a password for $adminuser"
 passwd $adminuser
 
