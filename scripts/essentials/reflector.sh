@@ -4,4 +4,4 @@ sudo reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mir
 pacman -Syy --noconfirm
 
 #start reflector service
-sudo systemctl enable reflector.timer
+systemctl enable reflector.timer
