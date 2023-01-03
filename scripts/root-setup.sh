@@ -14,7 +14,6 @@ hwclock --systohc
 
 source "$DIR/scripts/essentials/locale.sh"
 
-echo "KEYMAP=$KEYMAP" >> /etc/vconsole.conf
 
 # Setup hosts 
 clear
@@ -26,21 +25,7 @@ echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 $HOSTNAME.localdomain $HOSTNAME" >> /etc/hosts
 
-# Setup Root Password
-clear
-echo "Root Password:"
-passwd
-
-# Setup user
-clear
-echo "Username:"
-read USERNAME
-
-useradd --badname -m -g users -G libvirt,wheel $USERNAME
-
-clear
-echo "Password:"
-passwd $USERNAME
+source "$DIR/scripts/essentials/users.sh"
 
 # Allow sudoers to access wheel
 sed --in-place 's/^#\s*\(%wheel\s\+ALL=(ALL:ALL)\s\+ALL\)/\1/' /etc/sudoers
