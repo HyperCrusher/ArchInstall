@@ -8,7 +8,7 @@ clear
 echo "Username:"
 read USERNAME
 
-useradd --badname -m -g users -G libvirt,wheel $USERNAME
+useradd --badname -m -g users -G wheel,ftp,http $USERNAME
 
 clear
 echo "Password:"
