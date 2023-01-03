@@ -14,7 +14,6 @@ hwclock --systohc
 
 source "$DIR/scripts/essentials/locale.sh"
 
-# Setup keymap
 echo "KEYMAP=$KEYMAP" >> /etc/vconsole.conf
 
 # Setup hosts 

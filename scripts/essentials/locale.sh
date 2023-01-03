@@ -8,3 +8,6 @@ fi
 
 locale-gen
 echo "LANG=$LOCALE" >> /etc/locale.conf
+
+# Setup keymap
+echo "KEYMAP=$KEYMAP" >> /etc/vconsole.conf
