@@ -1,13 +1,20 @@
-#Refind Setup
-#Modifies /boot/EFI/BOOT/refind.conf
-#Sets my personal defaults
-#Keeps the example stanzas
+#Setup refind
+#Does not delete example stanzas
 
+#Setup refind.conf options
 ENABLE_OPTS=("enable_mouse" "use_graphics_for" "resolution max")
 REPLACE_OPTS=("timeout" "timeout 10" "showtools" "showtools")
-REFIND_FILE="/boot/EFI/BOOT/refind.conf"
-REFIND_CONFIG=$(cat $REFIND_FILE)
 
+#Refind Files
+REFIND_CONF="/boot/EFI/BOOT/refind.conf"
+REFIND_LINUX="/boot/refind_linux.conf"
+
+#Remove archiso entries
+sed -i /archiso/d $REFIND_LINUX   
+
+REFIND_CONFIG=$(cat $REFIND_CONF)
+
+#function to update refind_config with single param commands
 update(){
   REFIND_CONFIG=$(echo "$REFIND_CONFIG" | $1 "$2")
 }
@@ -24,7 +31,6 @@ for ((i = 0; i<${#REPLACE_OPTS[@]}; i+=2 ))
   update sed "s/^${REPLACE_OPTS[i]}.*/${REPLACE_OPTS[i+1]}/"
 done
 
-update sed "root=PARTUUID="
 #Remove comments
 update sed '/^#/d'
 
@@ -36,5 +42,6 @@ rm $REFIND_FILE
 touch $REFIND_FILE
 echo "$REFIND_CONFIG" >> $REFIND_FILE
 
-#Cleanup by trimming file
-sed -i -e '/./,$!d' -e :a -e '/^\n*$/{$d;N;ba' -e '}' $REFIND_FILE
+#Cleanup by trimming files
+sed -i -e '/./,$!d' -e :a -e '/^\n*$/{$d;N;ba' -e '}' $REFIND_CONF
+sed -i -e '/./,$!d' -e :a -e '/^\n*$/{$d;N;ba' -e '}' $REFIND_LINUX
