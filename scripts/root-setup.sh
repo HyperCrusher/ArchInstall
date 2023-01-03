@@ -14,16 +14,7 @@ hwclock --systohc
 
 source "$DIR/scripts/essentials/locale.sh"
 
-
-# Setup hosts 
-clear
-echo "Hostname:"
-read HOSTNAME
-
-echo $HOSTNAME >> /etc/hostname
-echo "127.0.0.1 localhost" >> /etc/hosts
-echo "::1       localhost" >> /etc/hosts
-echo "127.0.1.1 $HOSTNAME.localdomain $HOSTNAME" >> /etc/hosts
+source "$DIR/scripts/essentials/hosts.sh"
 
 source "$DIR/scripts/essentials/users.sh"
 
