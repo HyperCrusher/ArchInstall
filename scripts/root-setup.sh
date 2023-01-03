@@ -12,14 +12,14 @@ KEYMAP="us"
 ln -sf "/usr/share/zoneinfo/$TIMEZONE" /etc/localtime
 hwclock --systohc
 
+# locales
 source "$DIR/scripts/essentials/locale.sh"
 
+# hosts
 source "$DIR/scripts/essentials/hosts.sh"
 
+# user setup
 source "$DIR/scripts/essentials/users.sh"
-
-# Allow sudoers to access wheel
-sed --in-place 's/^#\s*\(%wheel\s\+ALL=(ALL:ALL)\s\+ALL\)/\1/' /etc/sudoers
 
 # pacman
 source "$DIR/scripts/essentials/pacman.sh"
