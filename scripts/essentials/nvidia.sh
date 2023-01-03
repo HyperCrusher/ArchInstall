@@ -8,8 +8,8 @@ REFIND_LINUX="/boot/refind_linux.conf"
 # Do needed installations
 pacman -S nvidia-dkms nvidia-utils nvidia-settings lib32-nvidia-utils
 
-# Add nvidia_drm and quiet to boot 
-sed -i '/"$/s/"$/ nvidia_drm.modeset=1 quiet"/' $REFIND_LINUX     
+# Add nvidia_drm to boot 
+sed -i '/"$/s/"$/ nvidia_drm.modeset=1"/' $REFIND_LINUX     
 
 # Add nvidia early-loading modules to initramfs
 sed -i 's/^MODULES=()/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/g' /etc/mkinitcpio.conf

@@ -20,6 +20,9 @@ mkrlconf
 #Remove archiso entries
 sed -i /archiso/d $REFIND_LINUX   
 
+# Add quiet flag
+sed -i '/"$/s/"$/ quiet"/' $REFIND_LINUX     
+
 REFIND_CONFIG=$(cat $REFIND_CONF)
 
 #function to update refind_config with single param commands
