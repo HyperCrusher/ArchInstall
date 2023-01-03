@@ -9,3 +9,5 @@ pacman -S --noconfirm jq jql
 # Rust alternatives to common utils
 pacman -S --noconfirm bat exa fd
 
+# My terminal shell
+pacman -S --noconfirm zsh
