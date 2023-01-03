@@ -12,16 +12,7 @@ KEYMAP="us"
 ln -sf "/usr/share/zoneinfo/$TIMEZONE" /etc/localtime
 hwclock --systohc
 
-# Set Locale and prompt for japanese
-sed -i "/$LOCALE UTF-8/s/^#//g" /etc/locale.gen
-
-if confirm "Install Japanese Locale?"
-then
-  sed -i '/ja_JP.UTF-8 UTF-8/s/^#//g' /etc/locale.gen
-fi
-
-locale-gen
-echo "LANG=$LOCALE" >> /etc/locale.conf
+source "$DIR/scripts/essentials/locale.sh"
 
 # Setup keymap
 echo "KEYMAP=$KEYMAP" >> /etc/vconsole.conf
