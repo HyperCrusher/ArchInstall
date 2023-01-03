@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Include confirm prompt
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source "$DIR/scripts/utils/confirm.sh"
@@ -23,6 +22,15 @@ source "$DIR/scripts/essentials/users.sh"
 
 # pacman
 source "$DIR/scripts/essentials/pacman.sh"
+
+#reflector
+source "$DIR/scripts/essentials/reflector.sh"
+
+# network
+source "$DIR/scripts/essentials/network.sh"
+
+# shell tools 
+source "$DIR/scripts/essentials/terminal.sh"
 
 # bootloader
 source "$DIR/scripts/essentials/refind.sh"
