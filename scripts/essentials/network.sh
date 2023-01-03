@@ -9,3 +9,4 @@ pacman -S --noconfirm nfs-utils
 
 # Enable network-manager service
 systemctl enable NetworkManager
+systemctl enable avahi-daemon
