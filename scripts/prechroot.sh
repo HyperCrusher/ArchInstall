@@ -25,10 +25,8 @@ pacstrap /mnt refind efibootmgr neovim
 #setup fstab
 genfstab -U /mnt >> /mnt/etc/fstab
 
-#download next script
-curl -sL $REPO/scripts/root-setup.sh -o /mnt/root-setup.sh
-chmod +x /mnt/root-setup.sh
+#copy repo over to /mnt
+cp -R "$DIR" "/mnt/ArchInstall"
 
-clear
-read -p "You will be chrooted into the new system. The script you need to run is already ready, just ./root-setup.sh to continue"
-
+#Chroot and continue installation
+arch-chroot /mnt /ArchInstall/scripts/root-setup.sh
