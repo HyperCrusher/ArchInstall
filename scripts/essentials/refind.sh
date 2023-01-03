@@ -9,6 +9,14 @@ REPLACE_OPTS=("timeout" "timeout 10" "showtools" "showtools")
 REFIND_CONF="/boot/EFI/BOOT/refind.conf"
 REFIND_LINUX="/boot/refind_linux.conf"
 
+#Get the efiBlock
+echo "Input efi block device (eg. /dev/sda1)"
+read EFI_BLOCK
+
+#run refind install commands
+refind-install --usedefault $EFI_BLOCK --alldrivers
+mkrlconf
+
 #Remove archiso entries
 sed -i /archiso/d $REFIND_LINUX   
 
