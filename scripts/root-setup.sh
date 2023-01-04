@@ -41,5 +41,49 @@ then
   source "$DIR/scripts/essentials/nvidia.sh"
 fi
 
-USERHOME="/home/$USERNAME/"
+# fonts
+source "$DIR/scripts/extras/fonts.sh"
+
+# Important drivers/software
+source "$DIR/scripts/extras/audio.sh"
+source "$DIR/scripts/extras/printers.sh"
+
+# User preferences
+
+## browsers
+source "$DIR/scripts/extras/browsers.sh"
+
+## Extra desktop things like folders torrent client ect
+source "$DIR/scripts/extras/desktop.sh"
+
+## File browsers
+source "$DIR/scripts/extras/filebrowser.sh"
+
+## Neovim plugin dependencies
+source "$DIR/scripts/extras/neovim.sh"
+
+## Social platforms
+source "$DIR/scripts/extras/social.sh"
+
+## Terminal and terminal apps I like
+source "$DIR/scripts/extras/terminal.sh"
+
+# Optional User preferences
+if confirm "Do you want to install neomutt for email?"
+then
+  source "$DIR/scripts/extras/email.sh"
+fi
+
+if confirm "Do you want bluetooth?"
+then
+  source "$DIR/scripts/extras/bluetooth.sh"
+fi
+
+if confirm "Do you want to run virtual machines?"
+then
+  source "$DIR/scripts/extras/virtualmachines.sh"
+fi
+
+# Aur helper
+source "$DIR/scripts/extras/paru.sh"
 
