@@ -29,4 +29,4 @@ genfstab -U /mnt >> /mnt/etc/fstab
 cp -R "$DIR" "/mnt/ArchInstall"
 
 #Chroot and continue installation
-arch-chroot /mnt /ArchInstall/scripts/root-setup.sh
+arch-chroot /mnt /ArchInstall/root-setup.sh
