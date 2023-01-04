@@ -6,7 +6,7 @@
 REFIND_LINUX="/boot/refind_linux.conf"
 
 # Do needed installations
-pacman -S nvidia-dkms nvidia-utils nvidia-settings lib32-nvidia-utils
+pacman -S --noconfirm nvidia-dkms nvidia-utils nvidia-settings lib32-nvidia-utils
 
 # Add nvidia_drm to boot 
 sed -i '/"$/s/"$/ nvidia_drm.modeset=1"/' $REFIND_LINUX     
@@ -20,4 +20,4 @@ touch /etc/modprobe.d/nvidia.conf
 echo "options nvidia-drm modeset=1" >> /etc/modprobe.d/nvidia.conf
 
 # Copy pacman hook to update initramfs after nvidia upgrade
-cp ./configs/pacman/nvidia.hook /etc/pacman.d/hooks/nvidia.hook
+cp "$DIR/configs/pacman/nvidia.hook" /etc/pacman.d/hooks/nvidia.hook

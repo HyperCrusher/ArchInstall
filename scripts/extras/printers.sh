@@ -1,5 +1,5 @@
 # install cups
-pacman -S cups 
+pacman -S --noconfirm cups 
 
 # enable cups
 systemctl enable cups

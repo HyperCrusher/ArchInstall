@@ -4,7 +4,7 @@
 if confirm "Do you want to use multilib libraries?"
 then
   sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
-  pacman -Syyu
+  pacman -Syyu --noconfirm
 fi
 
 # Color
@@ -14,4 +14,4 @@ sed -i "/#Color/s/^#//" /etc/pacman.conf
 pacman -S --noconfirm downgrade rebuild-detector
 
 # Add rebuild hook
-cp ./configs/pacman/rebuild.hook /etc/pacman.d/hooks/rebuild.hook
+cp "$DIR/configs/pacman/rebuild.hook" /etc/pacman.d/hooks/rebuild.hook
