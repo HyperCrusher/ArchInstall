@@ -8,6 +8,6 @@ makepkg -si
 cp "$DIR/configs/paru/paru.conf" /etc/paru.conf
 
 # clean up
-cd /
-rm -r paru
+cd ../
+sudo rm -r paru
 

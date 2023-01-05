@@ -15,5 +15,5 @@ cd nerd-fonts
 ./install.sh
 
 # Cleanup nerd-fonts
-cd /
-rm -r nerd-fonts
+cd ../
+sudo rm -r nerd-fonts
