@@ -23,6 +23,9 @@ sed -i /archiso/d $REFIND_LINUX
 # Add quiet flag
 sed -i '/"$/s/"$/ quiet"/' $REFIND_LINUX     
 
+# Add rw flag
+sed -i '/"$/s/"$/ rw"/' $REFIND_LINUX     
+
 REFIND_CONFIG=$(cat $REFIND_CONF)
 
 #function to update refind_config with single param commands
@@ -49,9 +52,9 @@ update sed '/^#/d'
 update awk '!NF{if(++n<=1)print;next};{n=0;print}' 
 
 #Replace the config with our edits
-rm $REFIND_FILE
-touch $REFIND_FILE
-echo "$REFIND_CONFIG" >> $REFIND_FILE
+rm $REFIND_CONF
+touch $REFIND_CONF
+echo "$REFIND_CONFIG" >> $REFIND_CONF
 
 #Cleanup by trimming files
 sed -i -e '/./,$!d' -e :a -e '/^\n*$/{$d;N;ba' -e '}' $REFIND_CONF
