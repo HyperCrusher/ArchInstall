@@ -8,7 +8,7 @@ while getopts :u:m flag
 do
     case "${flag}" in
         u) USERNAME=${OPTARG};;
-        m) MULTILIB=${OPTARG};;
+        m) MULTILIB=1;;
     esac
 done
 
