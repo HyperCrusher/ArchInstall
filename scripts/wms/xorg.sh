@@ -9,3 +9,7 @@ pacman -S --noconfirm sddm
 
 # Enable SDDM
 systemctl enable sddm
+
+# Preffered Compositor
+# Has to be run in user-space
+/bin/su -c "paru -S --noconfirm picom-git" -s /bin/bash $USERNAME
