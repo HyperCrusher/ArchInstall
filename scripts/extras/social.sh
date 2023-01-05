@@ -1,5 +1,5 @@
 # Install chat apps
-pacman -S --noconfirm discord
+sudo pacman -S --noconfirm discord
 
 # Install steam
-pacman -S --noconfirm steam
+  sudo pacman -S --noconfirm steam

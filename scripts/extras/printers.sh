@@ -1,8 +1,8 @@
 # install cups
-pacman -S --noconfirm cups 
+sudo pacman -S --noconfirm cups 
 
 # enable cups
-systemctl enable cups
+sudo systemctl enable cups
 
 # add user to the lp group
-usermod -aG lp $USERNAME
+sudo usermod -aG lp $USERNAME

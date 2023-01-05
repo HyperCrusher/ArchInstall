@@ -1,12 +1,15 @@
 
 # Install 'base' fonts
-pacman -S --noconfirm adobe-source-code-pro-fonts cantarell-fonts ttf-ms-fonts ttf-opensans
+sudo pacman -S --noconfirm adobe-source-code-pro-fonts cantarell-fonts ttf-ms-fonts ttf-opensans
+
+# So steam doesn't look like ass
+sudo pacman -S --noconfirm ttf-liberation
 
 # Korean Font(s)
 clear
 if confirm "Install Korean Fonts?"
 then
-  pacman -S --noconfirm ttf-baekmuk
+  sudo pacman -S --noconfirm ttf-baekmuk
 fi
 
 # Nerd fonts

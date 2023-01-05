@@ -1,2 +1,2 @@
 #My Preferred file tui filebrowser
-pacman -S --noconfirm ranger ffmpeg ffmpegthumbnailer
+sudo pacman -S --noconfirm ranger ffmpeg ffmpegthumbnailer
