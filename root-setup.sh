@@ -26,8 +26,13 @@ source "$DIR/scripts/essentials/network.sh"
 ## shell tools 
 source "$DIR/scripts/essentials/terminal.sh"
 
-# Install all /extras under user space
-/bin/su -c "$DIR/scripts/user-setup.sh -u $USERNAME -m $MULTILIB" -s /bin/bash $USERNAME
+# Install all /extras under user space passing -m if multilib was installed
+FLAGS="-u $USERNAME"
+if [ $MULTILIB -eq 1 ]
+then
+  FLAGS="${FLAGS} -m"
+fi
+/bin/su -c "$DIR/scripts/user-setup.sh $FLAGS" -s /bin/bash $USERNAME
 
 # Window Manager (must be below applications)
 # Requires paru to be setup 
