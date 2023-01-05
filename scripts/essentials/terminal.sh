@@ -4,7 +4,7 @@
 pacman -S --noconfirm curl man-db ripgrep git unzip
 
 # Format/query json via cli
-pacman -S --noconfirm jq jql
+pacman -S --noconfirm jq 
 
 # Rust alternatives to common utils
 pacman -S --noconfirm bat exa fd
