@@ -45,3 +45,5 @@ source "$DIR/scripts/extras/bluetooth.sh"
 
 source "$DIR/scripts/extras/virtualmachines.sh"
 
+# set zsh as default shell
+chsh -s $(which zsh)
