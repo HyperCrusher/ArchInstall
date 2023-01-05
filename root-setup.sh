@@ -33,3 +33,5 @@ source "$DIR/scripts/essentials/terminal.sh"
 # Requires paru to be setup 
 source "$DIR/scripts/wms/xorg.sh"
 source "$DIR/scripts/wms/awesome.sh"
+
+reboot
