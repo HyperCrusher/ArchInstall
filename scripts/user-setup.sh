@@ -1,8 +1,5 @@
+#!/bin/bash
 # All the /extra packages are sourced here
-
-# Include our config and confirm 'dialogue'
-source "$DIR/utils/confirm.sh"
-source "$DIR/../config.sh"
 
 while getopts :u:m flag
 do
