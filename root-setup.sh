@@ -29,3 +29,7 @@ source "$DIR/scripts/essentials/terminal.sh"
 # Install all /extras under user space
 /bin/su -c "$DIR/scripts/user-setup.sh -u $USERNAME -m $MULTILIB" -s /bin/bash $USERNAME
 
+# Window Manager (must be below applications)
+# Requires paru to be setup 
+source "$DIR/scripts/wms/xorg.sh"
+source "$DIR/scripts/wms/awesome.sh"

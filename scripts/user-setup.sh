@@ -48,6 +48,3 @@ source "$DIR/scripts/extras/bluetooth.sh"
 
 source "$DIR/scripts/extras/virtualmachines.sh"
 
-## WindowManager
-source "$DIR/scripts/wms/xorg.sh"
-source "$DIR/scripts/wms/awesome.sh"
