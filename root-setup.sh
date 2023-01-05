@@ -1,45 +1,32 @@
 #!/bin/bash
-# Include confirm prompt
+
+# Include confirm prompt and config
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source "$DIR/scripts/utils/confirm.sh"
+source "$DIR/config.sh"
 
-TIMEZONE="America/Pheonix"
-LOCALE="en_US.UTF-8"
-KEYMAP="us"
+# Basic Every System tasks
+source "$DIR/scripts/core-setup.sh"
 
-# Setup timezone and sync hwclock
-ln -sf "/usr/share/zoneinfo/$TIMEZONE" /etc/localtime
-hwclock --systohc
-
-# locales
-source "$DIR/scripts/essentials/locale.sh"
-
-# hosts
-source "$DIR/scripts/essentials/hosts.sh"
-
-# user setup
-source "$DIR/scripts/essentials/users.sh"
-
-# pacman
-source "$DIR/scripts/essentials/pacman.sh"
-
-#reflector
-source "$DIR/scripts/essentials/reflector.sh"
-
-# network
-source "$DIR/scripts/essentials/network.sh"
-
-# shell tools 
-source "$DIR/scripts/essentials/terminal.sh"
-
-# bootloader
+## bootloader
 source "$DIR/scripts/essentials/refind.sh"
 
-# nvidia
+## nvidia
 if confirm "Using nvidia gpu?"
 then
   source "$DIR/scripts/essentials/nvidia.sh"
 fi
+
+## pacman
+source "$DIR/scripts/essentials/pacman.sh"
+
+## network
+source "$DIR/scripts/essentials/network.sh"
+
+## shell tools 
+source "$DIR/scripts/essentials/terminal.sh"
+
+
 
 # fonts
 source "$DIR/scripts/extras/fonts.sh"
