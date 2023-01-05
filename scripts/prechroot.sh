@@ -17,7 +17,7 @@ pacstrap /mnt base linux linux-headers linux-firmware sof-firmware base-devel
 if confirm "Install intel micro-code updates?"
 then
   pacstrap /mnt intel-ucode
-if
+fi
 
 #Basics
 pacstrap /mnt refind efibootmgr neovim
@@ -26,7 +26,7 @@ pacstrap /mnt refind efibootmgr neovim
 genfstab -U /mnt >> /mnt/etc/fstab
 
 #copy repo over to /mnt
-cp -R "$DIR" "/mnt/ArchInstall"
+cp -R "$DIR" "/mnt/archinstall"
 
 #Chroot and continue installation
-arch-chroot /mnt /ArchInstall/root-setup.sh
+arch-chroot /mnt /archinstall/root-setup.sh
