@@ -4,7 +4,7 @@ cd ~
 echo "enter root password"
 read -s password
 # Get yay because i like it
-pacman -S --noconfirm --needed git base-devel
+echo "$password" | sudo -S pacman -S --noconfirm --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
