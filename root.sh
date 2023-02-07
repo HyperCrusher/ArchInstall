@@ -52,7 +52,7 @@ source "$dir/refind.sh"
 yes | pacman -S nvidia-dkms nvidia-utils nvidia-settings lib32-nvidia-utils
 
 # add early loading modules
-sed -i 's/^MODULES=()/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/g' /etc/mkinitcpio.conf
+sed -i 's/^MODULES=()/MODULES=(btrfs nvidia nvidia_modeset nvidia_uvm nvidia_drm)/g' /etc/mkinitcpio.conf
 mkinitcpio -P
 
 mkdir -p /etc/modprobe.d/
