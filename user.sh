@@ -1,3 +1,5 @@
+cd ~
+
 # cleanup root
 sudo rm -r /archinstall
 
@@ -9,17 +11,17 @@ makepkg -si
 yay -Y --gendb
 yay -Syu --devel
 yay -Y --devel --save
-cd ../
-sudo -S rm -r yay
+cd ~
+sudo rm -r yay
 
 # Get lemmeknow because its useful
 git clone https://github.com/swanandx/lemmeknow
 cd lemmeknow
 cargo build --release
 cd target/release
-sudo -S mv ./lemmeknow /bin/lemmeknow
+sudo mv ./lemmeknow /bin/lemmeknow
 cd ~
-sudo -S rm -r lemmeknow
+sudo rm -r lemmeknow
 
 
 # Install nerd-fonts
