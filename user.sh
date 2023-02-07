@@ -1,7 +1,7 @@
 # move to user home
 cd ~
 
-read "enter root password"
+echo "enter root password"
 read -s password
 # Get yay because i like it
 git clone https://aur.archlinux.org/yay.git
