@@ -1,5 +1,3 @@
-cd ~
-
 # Get yay because i like it
 sudo -S pacman -S --noconfirm --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
