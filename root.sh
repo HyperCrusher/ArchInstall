@@ -20,15 +20,17 @@ echo "::1         localhost" >> /etc/hosts
 echo "127.0.1.1   arch.localdomain arch" >> /etc/hosts
 
 # Root Password
+clear
 echo "root Pass:"
 passwd
 
 # User
+clear
 echo "Username:"
 read username
 useradd --badname -m -g users -G wheel $username
-clear
 
+clear
 echo "Password:"
 passwd $username
 
@@ -61,7 +63,8 @@ echo "options nvidia-drm modeset=1" >> /etc/modprobe.d/nvidia.conf
 # Install software (through pacman)
 ########################################################
 
-yes | pacman --noconfirm -S networkmanager avahi iptables-nft openssh dnsmasq nfs-utils
+yes | pacman --noconfirm -S networkmanager avahi openssh dnsmasq nfs-utils
+yes | pacman -S iptables-nft
 yes | pacman --noconfirm -S rebuild-detector reflector
 yes | pacman --noconfirm -S man-db ripgrep git jq bat exa fd fzf zsh
 
@@ -71,7 +74,7 @@ yes | pacman --noconfirm -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa
 yes | pacman --noconfirm -S bluez
 yes | pacman --noconfirm -S vivaldi vivaldi-ffmpeg-codecs libnotify lynx
 yes | pacman --noconfirm -S xdg-user-dirs xdg-utils qbittorrent
-yes | pacman --noconfirm -S adobe-source-code-pro-conts cantarell-fonts ttf-opensans ttf-liberation
+yes | pacman --noconfirm -S adobe-source-code-pro-fonts cantarell-fonts ttf-opensans ttf-liberation
 
 yes | pacman --noconfirm -S npm python-virtualenv
 yes | pacman --noconfirm -S cups
