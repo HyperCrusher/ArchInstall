@@ -61,22 +61,22 @@ echo "options nvidia-drm modeset=1" >> /etc/modprobe.d/nvidia.conf
 # Install software (through pacman)
 ########################################################
 
-yes | pacman -S networkmanager avahi iptables-nft openssh dnsmasq nfs-utils
-yes | pacman -S rebuild-detector reflector
-yes | pacman -S man-db ripgrep git jq bat exa fd fzf zsh
+yes | pacman --noconfirm -S networkmanager avahi iptables-nft openssh dnsmasq nfs-utils
+yes | pacman --noconfirm -S rebuild-detector reflector
+yes | pacman --noconfirm -S man-db ripgrep git jq bat exa fd fzf zsh
 
 # We switched back to pulse audio, because its far easier to pass to a VM with single gpu passthrough
-yes | pacman -S pulseaudio pulseaudio-alsa pulseaudio--bluetooth alsa-utils alsa-plugins pamixer
+yes | pacman --noconfirm -S pulseaudio pulseaudio-alsa pulseaudio--bluetooth alsa-utils alsa-plugins pamixer
 
-yes | pacman -S bluez
-yes | pacman -S vivaldi vivaldi-ffmpeg-codecs libnotify lynx
-yes | pacman -S xdg-user-dirs xdg-utils qbittorent
-yes | pacman -S adobe-source-code-pro-conts cantarell-fonts ttf-opensans ttf-liberation
+yes | pacman --noconfirm -S bluez
+yes | pacman --noconfirm -S vivaldi vivaldi-ffmpeg-codecs libnotify lynx
+yes | pacman --noconfirm -S xdg-user-dirs xdg-utils qbittorent
+yes | pacman --noconfirm -S adobe-source-code-pro-conts cantarell-fonts ttf-opensans ttf-liberation
 
-yes | pacman -S npm python-virtualenv
-yes | pacman -S cups
-yes | pacman -S discord steam
-yes | pacman -S qemu-full virt-manager
+yes | pacman --noconfirm -S npm python-virtualenv
+yes | pacman --noconfirm -S cups
+yes | pacman --noconfirm -S discord steam
+yes | pacman --noconfirm -S qemu-full virt-manager
 
 # Enable libvirt group to access Unix docket ownership
 sed -i "/#unix_sock_group/s/^#//" /etc/libvirt/libvirtd.conf
