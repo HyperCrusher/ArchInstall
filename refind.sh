@@ -24,7 +24,10 @@ sed -i /archiso/d $REFIND_LINUX
 sed -i '/"$/s/"$/ quiet"/' $REFIND_LINUX     
 
 # Add rw flag
-sed -i '/"$/s/"$/ rw"/' $REFIND_LINUX     
+sed -i '/"$/s/"$/ rw"/' $REFIND_LINUX 
+
+# Set default subvol
+sed -i '/"$/s/"$/ rootflags=subvol=@"/' $REFIND_LINUX     
 
 REFIND_CONFIG=$(cat $REFIND_CONF)
 
