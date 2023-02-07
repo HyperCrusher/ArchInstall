@@ -42,7 +42,7 @@ mkdir -p /etc/pacman.d/hooks
 
 # Bootloader
 clear
-source "refind.sh"
+source "./refind.sh"
 
 # Nvidia
 yes | pacman -S nvidia-dkms nvidia-utils nvidia-settings lib32-nvidia-utils
@@ -106,4 +106,4 @@ systemctl enable sshd
 systemctl enable reflector.timer
 
 # Run the user script
-/bin/su -c "user.sh" -s /bin/bash $username
+/bin/su -c "./user.sh" -s /bin/bash $username
