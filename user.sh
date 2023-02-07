@@ -1,8 +1,5 @@
 cd ~
 
-# cleanup root
-sudo rm -r /archinstall
-
 # Get yay because i like it
 sudo -S pacman -S --noconfirm --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
@@ -34,3 +31,6 @@ yay -S --noconfirm shellcheck fend ouch monolith
 yay -S --noconfirm abook neomutt isync msmtp pass pam-gnupg notmuch urlview
 yay -S --noconfirm github-cli stow nitch lazygit jql
 yay -S --noconfirm picom-pijulius-git
+
+# cleanup
+sudo rm ~/user.sh 
