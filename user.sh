@@ -1,6 +1,8 @@
 # move to user home
 cd ~
 
+read "enter root password"
+read -s password
 # Get yay because i like it
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -9,16 +11,16 @@ yay -Y --gendb
 yay -Syu --devel
 yay -Y --devel --save
 cd ../
-sudo rm -r yay
+echo "$password" | sudo -S rm -r yay
 
 # Get lemmeknow because its useful
 git clone https://github.com/swanandx/lemmeknow
 cd lemmeknow
 cargo build --release
 cd target/release
-sudo mv ./lemmeknow /bin/lemmeknow
+echo "$password" | sudo -S mv ./lemmeknow /bin/lemmeknow
 cd ~
-sudo rm -r lemmeknow
+echo "$password" | sudo -S rm -r lemmeknow
 
 
 # Install nerd-fonts
