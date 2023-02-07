@@ -75,7 +75,7 @@ yes | pacman --noconfirm -S vivaldi vivaldi-ffmpeg-codecs libnotify lynx
 yes | pacman --noconfirm -S xdg-user-dirs xdg-utils qbittorrent
 yes | pacman --noconfirm -S adobe-source-code-pro-fonts cantarell-fonts ttf-opensans ttf-liberation
 
-yes | pacman --noconfirm -S npm python-virtualenv
+yes | pacman --noconfirm -S npm python-virtualenv rust
 yes | pacman --noconfirm -S cups
 yes | pacman --noconfirm -S discord steam
 yes | pacman --noconfirm -S qemu-full virt-manager
