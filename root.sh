@@ -64,7 +64,6 @@ echo "options nvidia-drm modeset=1" >> /etc/modprobe.d/nvidia.conf
 ########################################################
 
 yes | pacman --noconfirm -S networkmanager avahi openssh dnsmasq nfs-utils
-yes | pacman -S iptables-nft
 yes | pacman --noconfirm -S rebuild-detector reflector
 yes | pacman --noconfirm -S man-db ripgrep git jq bat exa fd fzf zsh
 
@@ -81,6 +80,7 @@ yes | pacman --noconfirm -S cups
 yes | pacman --noconfirm -S discord steam
 yes | pacman --noconfirm -S qemu-full virt-manager
 
+yes | pacman -S iptables-nft
 # Enable libvirt group to access Unix docket ownership
 sed -i "/#unix_sock_group/s/^#//" /etc/libvirt/libvirtd.conf
 sed -i "/#unix_sock_rw_perms/s/^#//" /etc/libvirt/libvirtd.conf
