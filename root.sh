@@ -110,11 +110,13 @@ systemctl enable avahi-daemon
 systemctl enable sshd
 systemctl enable reflector.timer
 
-# Remove the directory
-rm /archinstall -r
-
 # Run the user script
 cp "$dir/user.sh" "/home/$username/user.sh"
 echo "Switching user to $username, run './user.sh'"
 read ignored
+
+# Remove the directory
+rm /archinstall -r
+
+cd /home/$username
 su $username
