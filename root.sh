@@ -43,10 +43,7 @@ sed -i "/#Color/s/^#//" /etc/pacman.conf
 mkdir -p /etc/pacman.d/hooks
 pacman -Sy
 
-# Bootloader
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )" 
-clear
-source "$dir/refind.sh"
 
 # Nvidia
 yes | pacman -S nvidia-dkms nvidia-utils nvidia-settings lib32-nvidia-utils
@@ -109,6 +106,10 @@ systemctl enable NetworkManager
 systemctl enable avahi-daemon
 systemctl enable sshd
 systemctl enable reflector.timer
+
+# Bootloader
+clear
+source "$dir/refind.sh"
 
 # Run the user script
 cp "$dir/user.sh" "/home/$username/user.sh"
