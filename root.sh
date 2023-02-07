@@ -111,4 +111,7 @@ systemctl enable sshd
 systemctl enable reflector.timer
 
 # Run the user script
-su $username -c "bash -i $dir/user.sh"
+cp "$dir/user.sh" "/home/$username/user.sh"
+echo "Switching user to $username, run './user.sh'"
+read ignored
+su $username

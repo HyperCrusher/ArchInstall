@@ -1,5 +1,5 @@
-# move to user home
-cd ~
+# cleanup root
+sudo rm -r /archinstall
 
 # Get yay because i like it
 sudo -S pacman -S --noconfirm --needed git base-devel
