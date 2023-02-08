@@ -62,7 +62,7 @@ echo "options nvidia-drm modeset=1" >> /etc/modprobe.d/nvidia.conf
 
 yes | pacman --noconfirm -S networkmanager avahi openssh dnsmasq nfs-utils
 yes | pacman --noconfirm -S rebuild-detector reflector
-yes | pacman --noconfirm -S man-db ripgrep git jq bat exa fd fzf zsh
+yes | pacman --noconfirm -S man-db ripgrep git jq bat exa fd fzf zsh bottom
 
 # We switched back to pulse audio, because its far easier to pass to a VM with single gpu passthrough
 yes | pacman --noconfirm -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils alsa-plugins pamixer
@@ -83,7 +83,12 @@ sed -i "/#unix_sock_group/s/^#//" /etc/libvirt/libvirtd.conf
 sed -i "/#unix_sock_rw_perms/s/^#//" /etc/libvirt/libvirtd.conf
 
 
+mkdir -p /etc/xdg/reflector
+rm /etc/xdg/reflector/reflector.conf
+cp $dir/configs/pacman/reflector.conf /etc/xdg/reflector/reflector.conf
 
+mkdir -p /etc/pacman.d/hooks
+cp $dir/configs/*.hook /etc/pacman.d/hooks/
 ########################################################
 # Install Desktop Environment
 ########################################################
