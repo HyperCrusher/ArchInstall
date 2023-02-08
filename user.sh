@@ -29,6 +29,9 @@ yay -S --noconfirm shellcheck fend ouch monolith
 yay -S --noconfirm abook neomutt isync msmtp pass pam-gnupg notmuch urlview
 yay -S --noconfirm github-cli stow nitch lazygit jql
 yay -S --noconfirm picom-pijulius-git
+yay -S --noconfirm ly
+
+sudo systemctl enable ly
 
 # cleanup
 sudo rm ~/user.sh 
