@@ -34,7 +34,31 @@ yay -S --noconfirm shellcheck fend ouch monolith
 yay -S --noconfirm abook neomutt isync msmtp pass pam-gnupg notmuch urlview
 yay -S --noconfirm github-cli stow nitch lazygit jql
 yay -S --noconfirm picom-pijulius-git
-yay -S --noconfirm ly
+yay -S --noconfirm ly mkinitcpio-colors-git
+
+# Add colors to vconsole
+colors=(
+  "1e1e2e"
+  "f38ba8"
+  "a6e3a1"
+  "fab387"
+  "89b4fa"
+  "cba6f7"
+  "89dceb"
+  "cdd6f4"
+  "1e1e2e"
+  "f38ba8"
+  "a6e3a1"
+  "fab387"
+  "89b4fa"
+  "cba6f7"
+  "89dceb"
+  "cdd6f4"
+)
+
+for i in {0..15}; do
+ sudo echo "COLOR_$i=${colors[i]}" >> /etc/vconsole.conf
+done
 
 sudo systemctl enable ly
 
