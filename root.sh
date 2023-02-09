@@ -88,7 +88,7 @@ rm /etc/xdg/reflector/reflector.conf
 cp $dir/configs/pacman/reflector.conf /etc/xdg/reflector/reflector.conf
 
 mkdir -p /etc/pacman.d/hooks
-cp $dir/configs/*.hook /etc/pacman.d/hooks/
+cp $dir/configs/pacman/*.hook /etc/pacman.d/hooks/
 ########################################################
 # Install Desktop Environment
 ########################################################
