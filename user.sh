@@ -60,6 +60,10 @@ for i in {0..15}; do
  sudo echo "COLOR_$i=${colors[i]}" >> /etc/vconsole.conf
 done
 
+# Add color to hooks and build
+sudo sed -i 's/HOOKS=(base udev/HOOKS=(base udev colors/' /etc/mkinitcpio.conf
+sudo mkinitcpio -P
+
 sudo systemctl enable ly
 
 # cleanup
