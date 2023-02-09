@@ -20,7 +20,12 @@ sudo rm -r lemmeknow
 
 
 # Install nerd-fonts
-yay -S --noconfirm nerd-fonts-git 
+git clone --depth 1 https://github.com/ryanoasis/nerd-fonts
+cd nerd-fonts
+./install.sh
+
+cd ../
+sudo rm -r nerd-fonts
 
 yay -S --noconfirm ttf-ms-fonts
 
