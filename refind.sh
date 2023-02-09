@@ -35,13 +35,5 @@ uuid=$(grep -Po '(?<=UUID=)[^ ]*' $REFIND_LINUX)
 sed -i "s/UUID=uuid/UUID=$uuid/g" /boot/EFI/BOOT/refind.conf
 
 # Theme setup
-echo "scanfor external,manual" >> boot/EFI/BOOT/refind.conf
-echo "include themes/rEFInd-minimal-themes/rEFInd-minimal-nord/theme.conf" >> /boot/EFI/BOOT/refind.conf
-
 mkdir -p /boot/EFI/BOOT/themes
-git clone https://github.com/quantrancse/rEFInd-minimal-themes /boot/EFI/BOOT/themes/rEFInd-minimal-themes
-
-# Remove opinionated parts of config
-sed -i '/# Custom menu entires/,$d' /boot/EFI/BOOT/themes/rEFInd-minimal-themes/rEFInd-minimal-nord/theme.conf
-sed -i '/showtools.*/d' /boot/EFI/BOOT/themes/rEFInd-minimal-themes/rEFInd-minimal-nord/theme.conf
-
+cp $dir/configs/refind/rtm /boot/EFI/BOOT/themes/
