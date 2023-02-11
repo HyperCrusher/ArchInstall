@@ -46,8 +46,10 @@ pacman -Sy
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )" 
 
 # Nvidia
-yes | pacman -S nvidia-dkms nvidia-utils nvidia-settings lib32-nvidia-utils
-
+read -p "Using Nvidia GPU?" usingNvidia
+if [[ "$usingNvidia" == "y" || "$usingNvidia" == "yes" || "$usingNvidia" == "Y" ]]; then
+  yes | pacman -S nvidia-dkms nvidia-utils nvidia-settings lib32-nvidia-utils
+fi
 # add early loading modules
 sed -i 's/^MODULES=()/MODULES=(btrfs nvidia nvidia_modeset nvidia_uvm nvidia_drm)/g' /etc/mkinitcpio.conf
 mkinitcpio -P
@@ -89,6 +91,11 @@ cp $dir/configs/pacman/reflector.conf /etc/xdg/reflector/reflector.conf
 
 mkdir -p /etc/pacman.d/hooks
 cp $dir/configs/pacman/*.hook /etc/pacman.d/hooks/
+
+# Remove nvidia hook if not using
+if [[ "$usingNvidia" != "y" && "$usingNvidia" != "yes" && "$usingNvidia" != "Y" ]]; then
+  rm /etc/pacman.d/hooks/nvidia.hook
+fi
 ########################################################
 # Install Desktop Environment
 ########################################################
