@@ -61,6 +61,7 @@ if [[ "$usingNvidia" == "y" || "$usingNvidia" == "yes" || "$usingNvidia" == "Y" 
 fi
 
 mkinitcpio -P
+
 ########################################################
 # Install software (through pacman)
 ########################################################
@@ -88,6 +89,8 @@ yes | pacman -S iptables-nft
 sed -i "/#unix_sock_group/s/^#//" /etc/libvirt/libvirtd.conf
 sed -i "/#unix_sock_rw_perms/s/^#//" /etc/libvirt/libvirtd.conf
 
+mkdir -p /etc/xdg
+cp $dir/configs/xdg/user-dirs.defaults /etc/xdg/user-dirs.defaults
 
 mkdir -p /etc/xdg/reflector
 rm /etc/xdg/reflector/reflector.conf
@@ -100,12 +103,13 @@ cp $dir/configs/pacman/*.hook /etc/pacman.d/hooks/
 if [[ "$usingNvidia" != "y" && "$usingNvidia" != "yes" && "$usingNvidia" != "Y" ]]; then
   rm /etc/pacman.d/hooks/nvidia.hook
 fi
+
 ########################################################
 # Install Desktop Environment
 ########################################################
+
 yes | pacman -S xclip xorg-server xorg-xsetroot xorg-xinit xorg-xinput numlockx
 yes | pacman -S bspwm sxhkd
-
 
 ########################################################
 # Add user to groups
@@ -113,10 +117,10 @@ yes | pacman -S bspwm sxhkd
 usermod -aG libvirt $username
 usermod -aG lp $username
 
-
 ########################################################
 # Enable systemd services
 ########################################################
+
 systemctl enable libvirtd
 systemctl enable NetworkManager
 systemctl enable avahi-daemon
