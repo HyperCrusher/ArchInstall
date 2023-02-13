@@ -51,13 +51,16 @@ if [[ "$usingNvidia" == "y" || "$usingNvidia" == "yes" || "$usingNvidia" == "Y" 
   yes | pacman -S nvidia-dkms nvidia-utils nvidia-settings lib32-nvidia-utils
 fi
 # add early loading modules
-sed -i 's/^MODULES=()/MODULES=(btrfs nvidia nvidia_modeset nvidia_uvm nvidia_drm)/g' /etc/mkinitcpio.conf
+sed -i 's/^Modules=.*/Modules=(btrfs &)/' /etc/mkinitcpio.conf
+
+if [[ "$usingNvidia" == "y" || "$usingNvidia" == "yes" || "$usingNvidia" == "Y" ]]; then
+  sed -i 's/^Modules=.*/Modules=(& nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
+  mkdir -p /etc/modprobe.d/
+  touch /etc/modprobe.d/nvidia.conf
+  echo "options nvidia-drm modeset=1" >> /etc/modprobe.d/nvidia.conf
+fi
+
 mkinitcpio -P
-
-mkdir -p /etc/modprobe.d/
-touch /etc/modprobe.d/nvidia.conf
-echo "options nvidia-drm modeset=1" >> /etc/modprobe.d/nvidia.conf
-
 ########################################################
 # Install software (through pacman)
 ########################################################
