@@ -17,6 +17,9 @@ sed -i /archiso/d $REFIND_LINUX
 # Add quiet flag
 sed -i '/"$/s/"$/ quiet"/' $REFIND_LINUX     
 
+# Disable watchdog
+sed -i '/"$/s/"$/ nowatchdog nmi_watchdog=0"/' $REFIND_LINUX 
+
 # Add rw flag
 sed -i '/"$/s/"$/ rw"/' $REFIND_LINUX 
 
