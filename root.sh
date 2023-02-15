@@ -79,6 +79,7 @@ yes | pacman --noconfirm -S xdg-user-dirs xdg-utils qbittorrent
 yes | pacman --noconfirm -S adobe-source-code-pro-fonts cantarell-fonts ttf-opensans ttf-liberation
 yes | pacman --noconfirm -S kitty kitty-shell-integration
 
+yes | pacman --noconfirm vlc
 yes | pacman --noconfirm -S npm python-virtualenv rust
 yes | pacman --noconfirm -S cups
 yes | pacman --noconfirm -S discord steam
