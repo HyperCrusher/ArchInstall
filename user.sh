@@ -36,7 +36,7 @@ yay -S --noconfirm github-cli stow nitch lazygit jql
 yay -S --noconfirm picom-pijulius-git
 yay -S --noconfirm ly mkinitcpio-colors-git
 yay -S --noconfirm steam-native-runtime
-yay -S --noconfirm discord_arch_electron betterdiscord-installer
+yay -S --noconfirm discord betterdiscord-installer
 # Add colors to vconsole
 colors=(
   "1e1e2e"
