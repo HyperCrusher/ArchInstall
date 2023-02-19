@@ -40,6 +40,7 @@ sed -i "s/^#\s*\(%wheel\s\+ALL=(ALL:ALL)\s\+ALL\)/\1/" /etc/sudoers
 # Pacman config
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 sed -i "/#Color/s/^#//" /etc/pacman.conf
+sed -i "/#ParallelDownloads/s/^#//" /etc/pacman.conf
 mkdir -p /etc/pacman.d/hooks
 pacman -Sy
 
