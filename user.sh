@@ -37,29 +37,6 @@ yay -S --noconfirm picom-pijulius-git
 yay -S --noconfirm ly mkinitcpio-colors-git
 yay -S --noconfirm steam-native-runtime
 yay -S --noconfirm discord betterdiscord-installer
-# Add colors to vconsole
-colors=(
-  "16161e"
-  "db4b4b"
-  "9ece6a"
-  "ff9e64"
-  "7aa2f7"
-  "bb9af7"
-  "2ac3de"
-  "c0caf5"
-  "a9b1d6"
-  "db4b4b"
-  "9ece6a"
-  "ff9e64"
-  "7aa2f7"
-  "bb9af7"
-  "2ac3de"
-  "c0caf5"
-)
-
-for i in {0..15}; do
- sudo echo "COLOR_$i=${colors[i]}" >> /etc/vconsole.conf
-done
 
 # Add color to hooks and build
 sudo sed -i 's/HOOKS=(base udev/HOOKS=(base udev colors/' /etc/mkinitcpio.conf

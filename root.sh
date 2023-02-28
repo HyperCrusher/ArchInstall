@@ -12,6 +12,30 @@ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 # Keymap
 echo "KEYMAP=us" >> /etc/vconsole.conf
 
+# Add colors to vconsole
+colors=(
+  "16161e"
+  "db4b4b"
+  "9ece6a"
+  "ff9e64"
+  "7aa2f7"
+  "bb9af7"
+  "2ac3de"
+  "c0caf5"
+  "a9b1d6"
+  "db4b4b"
+  "9ece6a"
+  "ff9e64"
+  "7aa2f7"
+  "bb9af7"
+  "2ac3de"
+  "c0caf5"
+)
+
+for i in {0..15}; do
+ sudo echo "COLOR_$i=${colors[i]}" >> /etc/vconsole.conf
+done
+
 # Hosts
 echo "arch" >> /etc/hostname
 
