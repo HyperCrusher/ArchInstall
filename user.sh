@@ -44,5 +44,14 @@ sudo mkinitcpio -P
 
 sudo systemctl enable ly
 
+# Dot file managment
+mkdir -p Documents/Repos
+cd Documents/Repos
+git clone https://github.com/timothycates/dotfiles
+cd dotfiles
+
+# use stow to create symlinks
+stow -t ~/ */
+
 # cleanup
 sudo rm ~/user.sh 
