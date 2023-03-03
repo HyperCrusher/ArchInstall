@@ -28,7 +28,7 @@ git sparse-checkout add patched-fonts/NerdFontsSymbolsOnly
 cd ../
 sudo rm -r nerd-fonts
 
-yay -S --noconfirm ttf-ms-fonts
+yay -S --noconfirm ttf-ms-fonts adobe-source-code-pro-fonts ttf-jetbrains-mono noto-fonts ttf-comic-mono-git
 
 # Some nice packages
 yay -S --noconfirm shellcheck fend ouch monolith 
