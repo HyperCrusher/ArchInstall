@@ -20,8 +20,9 @@ sudo rm -r lemmeknow
 
 
 # Install nerd-fonts
-git clone --depth 1 https://github.com/ryanoasis/nerd-fonts
+git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts
 cd nerd-fonts
+git sparse-checkout add patched-fonts/NerdFontsSymbolsOnly
 ./install.sh
 
 cd ../
