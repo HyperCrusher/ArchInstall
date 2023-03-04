@@ -34,7 +34,7 @@ yay -S --noconfirm ttf-ms-fonts adobe-source-code-pro-fonts ttf-jetbrains-mono n
 yay -S --noconfirm shellcheck fend ouch monolith 
 yay -S --noconfirm abook neomutt isync msmtp pass pam-gnupg notmuch urlview
 yay -S --noconfirm github-cli stow nitch lazygit jql
-yay -S --noconfirm picom-pijulius-git nitrogen
+yay -S --noconfirm picom-git nitrogen
 yay -S --noconfirm ly mkinitcpio-colors-git
 yay -S --noconfirm steam-native-runtime
 yay -S --noconfirm discord betterdiscord-installer
