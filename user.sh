@@ -36,7 +36,7 @@ yay -S --noconfirm abook neomutt isync msmtp pass pam-gnupg notmuch urlview
 yay -S --noconfirm github-cli stow nitch lazygit jql flameshot
 yay -S --noconfirm picom-git nitrogen
 yay -S --noconfirm ly mkinitcpio-colors-git
-yay -S --noconfirm steam-native-runtime
+yay -S --noconfirm steam-native-runtime proton-ge-custom-bin
 yay -S --noconfirm discord betterdiscord-installer
 
 # Add color to hooks and build
