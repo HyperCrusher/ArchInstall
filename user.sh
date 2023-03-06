@@ -54,5 +54,7 @@ cd dotfiles
 # use stow to create symlinks
 stow -t ~/ */
 
+chsh -s /bin/zsh
+sudo rm .bash_history .bash_profile .bash_logout .bashrc .histfile
 # cleanup
 sudo rm ~/user.sh 
