@@ -36,8 +36,10 @@ yay -S --noconfirm pass pam-gnupg
 yay -S --noconfirm github-cli stow nitch lazygit jql flameshot
 yay -S --noconfirm picom-git nitrogen
 yay -S --noconfirm ly mkinitcpio-colors-git
-yay -S --noconfirm steam-native-runtime proton-ge-custom-bin
+yay -S --noconfirm steam-native-runtime proton-ge-custom-bin protonvpn
 yay -S --noconfirm discord betterdiscord-installer
+yay -S --noconfirm krita mpv mpv-url mpv-sponsorblock-git mpv-thumbfast-git yt-dlp
+yay -S --noconfirm spicetify-cli eww
 
 # Add color to hooks and build
 sudo sed -i 's/HOOKS=(base udev/HOOKS=(base udev colors/' /etc/mkinitcpio.conf
