@@ -42,7 +42,7 @@ yay -S --noconfirm krita mpv mpv-url mpv-sponsorblock-git mpv-thumbfast-git yt-d
 yay -S --noconfirm spicetify-cli eww
 
 # Add color to hooks and build
-sudo sed -i 's/HOOKS=(base udev/HOOKS=(base udev colors/' /etc/mkinitcpio.conf
+sudo sed -i '/^HOOKS=/ s/udev/& colors/' /etc/mkinitcpio.conf
 sudo mkinitcpio -P
 
 # Dot file managment
