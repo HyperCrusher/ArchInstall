@@ -78,6 +78,9 @@ fi
 # add early loading modules
 sed -i 's/^MODULES=.*/MODULES=(btrfs &)/' /etc/mkinitcpio.conf
 
+# Enable numlock
+sudo sed -i '/^HOOKS=/ s/consolefont/& numlock/' /etc/mkinitcpio.conf
+
 if [[ "$usingNvidia" == "y" || "$usingNvidia" == "yes" || "$usingNvidia" == "Y" ]]; then
   sed -i 's/^MODULES=.*/MODULES=(& nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
   mkdir -p /etc/modprobe.d/
@@ -130,7 +133,7 @@ fi
 # Install Desktop Environment
 ########################################################
 
-yes | pacman -S xclip xorg-server xorg-xsetroot xorg-xinit xorg-xinput numlockx
+yes | pacman -S xclip xorg-server xorg-xsetroot xorg-xinit xorg-xinput 
 yes | pacman -S bspwm sxhkd
 
 ########################################################
