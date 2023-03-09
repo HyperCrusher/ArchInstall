@@ -35,14 +35,17 @@ yay -S --noconfirm shellcheck fend ouch monolith
 yay -S --noconfirm pass pam-gnupg 
 yay -S --noconfirm github-cli stow nitch lazygit jql flameshot
 yay -S --noconfirm picom-git nitrogen
-yay -S --noconfirm mkinitcpio-colors-git
+yay -S --noconfirm mkinitcpio-colors-git mkinitcpio-numlock
 yay -S --noconfirm steam-native-runtime proton-ge-custom-bin protonvpn
 yay -S --noconfirm discord betterdiscord-installer
 yay -S --noconfirm krita mpv mpv-url mpv-sponsorblock-git mpv-thumbfast-git yt-dlp
 yay -S --noconfirm spicetify-cli spotify eww
 
-# Add color to hooks and build
+# Add color 
 sudo sed -i '/^HOOKS=/ s/udev/& colors/' /etc/mkinitcpio.conf
+# Enable numlock
+sudo sed -i '/^HOOKS=/ s/consolefont/& numlock/' /etc/mkinitcpio.conf
+# Build
 sudo mkinitcpio -P
 
 # Dot file managment
