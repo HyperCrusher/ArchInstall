@@ -9,16 +9,6 @@ yay -Y --devel --save
 cd ~
 sudo rm -r yay
 
-# Get lemmeknow because its useful
-git clone https://github.com/swanandx/lemmeknow
-cd lemmeknow
-cargo build --release
-cd target/release
-sudo mv ./lemmeknow /bin/lemmeknow
-cd ~
-sudo rm -r lemmeknow
-
-
 # Install nerd-fonts
 git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts
 cd nerd-fonts
@@ -40,6 +30,15 @@ yay -S --noconfirm steam-native-runtime proton-ge-custom-bin protonvpn
 yay -S --noconfirm discord betterdiscord-installer
 yay -S --noconfirm krita mpv mpv-url mpv-sponsorblock-git mpv-thumbfast-git yt-dlp
 yay -S --noconfirm spicetify-cli spotify eww
+
+# Get lemmeknow because its useful
+git clone https://github.com/swanandx/lemmeknow
+cd lemmeknow
+cargo build --release
+cd target/release
+sudo mv ./lemmeknow /bin/lemmeknow
+cd ~
+sudo rm -r lemmeknow
 
 # Add color 
 sudo sed -i '/^HOOKS=/ s/udev/& colors/' /etc/mkinitcpio.conf
