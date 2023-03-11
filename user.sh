@@ -22,7 +22,7 @@ yay -S --noconfirm ttf-ms-fonts ttf-jetbrains-mono noto-fonts ttf-comic-mono-git
 
 # Some nice packages
 yay -S --noconfirm shellcheck fend ouch monolith 
-yay -S --noconfirm pass pam-gnupg 
+yay -S --noconfirm bitwarden-cli bitwarden
 yay -S --noconfirm github-cli stow nitch lazygit jql flameshot
 yay -S --noconfirm picom-git nitrogen
 yay -S --noconfirm mkinitcpio-colors-git mkinitcpio-numlock
