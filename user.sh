@@ -30,7 +30,7 @@ yay -S --noconfirm steam-native-runtime proton-ge-custom-bin protonvpn
 yay -S --noconfirm discord betterdiscord-installer
 yay -S --noconfirm krita mpv mpv-url mpv-sponsorblock-git mpv-thumbfast-git yt-dlp
 yay -S --noconfirm spicetify-cli spotify eww obsidian obs-studio-browser blender
-yay -S --noconfirm telegram-desktop slack-desktop 
+yay -S --noconfirm telegram-desktop slack-desktop jdk-openjdk
 
 # Get lemmeknow because its useful
 git clone https://github.com/swanandx/lemmeknow
