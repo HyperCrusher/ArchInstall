@@ -9,6 +9,9 @@ yay -Y --devel --save
 cd ~
 sudo rm -r yay
 
+# Setup default rust toolchain
+rustup default stable
+
 # Install nerd-fonts
 git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts
 cd nerd-fonts

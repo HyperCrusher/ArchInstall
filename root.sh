@@ -108,6 +108,10 @@ yes | pacman --noconfirm -S npm python-virtualenv rustup cups
 yes | pacman --noconfirm -S qemu-full virt-manager
 
 yes | pacman -S iptables-nft
+
+# Setup default rust toolchain
+rustup default stable
+
 # Enable libvirt group to access Unix docket ownership
 sed -i "/#unix_sock_group/s/^#//" /etc/libvirt/libvirtd.conf
 sed -i "/#unix_sock_rw_perms/s/^#//" /etc/libvirt/libvirtd.conf
