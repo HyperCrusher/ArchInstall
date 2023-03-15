@@ -39,4 +39,4 @@ sed -i "s/UUID=uuid/UUID=$uuid/g" /boot/EFI/BOOT/refind.conf
 
 # Theme setup
 mkdir -p /boot/EFI/BOOT/themes
-cp -r $dir/configs/refind/rtm /boot/EFI/BOOT/themes/
+cp -r $dir/configs/refind/tokyo-night /boot/EFI/BOOT/themes/
