@@ -32,7 +32,7 @@ yay -S --noconfirm mkinitcpio-colors-git mkinitcpio-numlock
 yay -S --noconfirm steam-native-runtime proton-ge-custom-bin protonvpn
 yay -S --noconfirm discord betterdiscord-installer
 yay -S --noconfirm krita mpv mpv-url mpv-sponsorblock-git mpv-thumbfast-git yt-dlp
-yay -S --noconfirm spicetify-cli spotify polybar obsidian obs-studio blender
+yay -S --noconfirm spicetify-cli spotify polybar rofi obsidian obs-studio blender
 yay -S --noconfirm telegram-desktop slack-desktop jdk-openjdk foliate coursera-dl-git
 
 # Get lemmeknow because its useful
