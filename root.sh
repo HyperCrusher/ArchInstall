@@ -1,5 +1,5 @@
 # Setup timezone and sync clock
-ln -sf "/usr/share/zoneinfo/America/Phoenix"
+ln -sf "/usr/share/zoneinfo/America/Phoenix" /etc/localtime
 hwclock --systohc
 
 # Setup desired locales
