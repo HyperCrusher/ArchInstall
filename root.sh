@@ -99,7 +99,7 @@ yes | pacman --noconfirm -S man-db ripgrep git jq bat exa fd fzf zsh bottom
 # We switched back to pulse audio, because its far easier to pass to a VM with single gpu passthrough
 yes | pacman --noconfirm -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils alsa-plugins pamixer
 
-yes | pacman --noconfirm -S bluez
+yes | pacman --noconfirm -S bluez numlockx
 yes | pacman --noconfirm -S vivaldi vivaldi-ffmpeg-codecs libnotify lynx
 yes | pacman --noconfirm -S xdg-user-dirs xdg-utils qbittorrent
 yes | pacman --noconfirm -S adobe-source-code-pro-fonts cantarell-fonts ttf-opensans ttf-liberation
