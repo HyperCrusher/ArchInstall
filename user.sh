@@ -26,13 +26,13 @@ yay -S --noconfirm ttf-ms-fonts ttf-jetbrains-mono noto-fonts ttf-comic-mono-git
 # Some nice packages
 yay -S --noconfirm shellcheck fend ouch monolith 
 yay -S --noconfirm rbw bitwarden onlyoffice-bin firejail
-yay -S --noconfirm github-cli stow nitch lazygit jql flameshot
+yay -S --noconfirm github-cli stow nitch lazygit jql flameshot jq
 yay -S --noconfirm picom-git nitrogen
 yay -S --noconfirm mkinitcpio-colors-git mkinitcpio-numlock
 yay -S --noconfirm steam-native-runtime proton-ge-custom-bin protonvpn
 yay -S --noconfirm discord betterdiscord-installer
 yay -S --noconfirm krita mpv mpv-url mpv-sponsorblock-git mpv-thumbfast-git yt-dlp
-yay -S --noconfirm spicetify-cli spotify polybar rofi obsidian obs-studio blender
+yay -S --noconfirm spicetify-cli spotify eww xdo rofi obsidian obs-studio blender
 yay -S --noconfirm telegram-desktop slack-desktop jdk-openjdk foliate coursera-dl-git
 
 # Get lemmeknow because its useful
