@@ -36,7 +36,7 @@ yay -S --noconfirm spicetify-cli spotify xdo rofi obsidian obs-studio blender
 yay -S --noconfirm telegram-desktop slack-desktop jdk-openjdk foliate coursera-dl-git
 
 # Eww breaks in the repos sometimes
-git clone https://github.com/elkowar/eww
+git clone https://github.com/timothycates/eww
 cd eww
 cargo build --release --no-default-features --features x11
 cd target/release
