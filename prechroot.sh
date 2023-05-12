@@ -1,4 +1,5 @@
 dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
 #Turn on ntp
 timedatectl set-ntp true
 
@@ -13,7 +14,6 @@ fi
 
 #Base install
 pacstrap /mnt base linux linux-headers linux-firmware sof-firmware base-devel
-
 
 #Basics
 pacstrap /mnt refind efibootmgr neovim
