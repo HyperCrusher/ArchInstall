@@ -98,7 +98,7 @@ device_utils = "android-file-transfer cups bluez"
 filesystem = "btrfs-progs nfs-utils"
 network = "dnsmasq iptables-nft networkmanager protonpvn qbittorrent vivaldi vivaldi-ffmpeg-codecs waterfox-g-bin"
 programming = "jdk-openjdk lazygit lua-language-server npm python-virtualenv shellcheck rustup"
-system = "efibootmgr kitty kitty-shell-integration mkinitcpio-colors-git mkinitcpio-numlock openssh polkit-kde-agent qemu-full rbw rebuild-detector refind reflector virt-manager xdg-user-dirs xdg-utils zsh"
+system = "efibootmgr kitty kitty-shell-integration mkinitcpio-colors-git mkinitcpio-numlock openssh polkit-kde-agent qemu-full rebuild-detector refind reflector virt-manager xdg-user-dirs xdg-utils zsh"
 
 yes | pacman --noconfirm -S $audio $console_utils $device_utils $filesystem $network $programming $system $lib32
 
