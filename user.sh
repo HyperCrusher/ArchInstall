@@ -32,6 +32,20 @@ util = "coursera-dl-git nitch ty-dlp"
 
 yay -S --noconfirm $fonts $passwordManager $art $office $games $social $util
 
+# Desktop Environment
+
+#qogir-icon-theme
+git clone https://github.com/vinceliuice/Qogir-icon-theme/
+cd Qogir-icon-theme
+cd src/cursors
+chmod +x install.sh
+sudo ./install.sh
+
+themes = "breeze-icons gnome-themes-extra gtk-engine-murrine papirus-icon-theme qt5-wayland qt5ct wt6-wayland qt6ct"
+wm_utils = "dunst grim-git slurp-git swaybg wl-clipboard wofi wtype"
+wm = "hyprland-nvidia-git hyprland-relative-workspace-bin waybar-hyprland-git xdg-desktop-portal-hyprland-git"
+
+yay -S --noconfirm $themes $wm_utils $wm
 
 # Get lemmeknow because its useful
 git clone https://github.com/swanandx/lemmeknow
