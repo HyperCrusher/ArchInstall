@@ -92,22 +92,15 @@ mkinitcpio -P
 # Install software (through pacman)
 ########################################################
 
-yes | pacman --noconfirm -S networkmanager avahi openssh dnsmasq nfs-utils
-yes | pacman --noconfirm -S rebuild-detector reflector
-yes | pacman --noconfirm -S man-db ripgrep git jq bat exa fd fzf zsh bottom
+audio = "alsa-plugins alsa-utils pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber"
+console_utils = "bat bottom codespell exa fd fzf git github-cli jq jql monolith proton-ge-custom-bin ripgrep stow unzip"
+device_utils = "android-file-transfer cups bluez"
+filesystem = "btrfs-progs nfs-utils"
+network = "dnsmasq iptables-nft networkmanager protonpvn qbittorrent vivaldi vivaldi-ffmpeg-codecs waterfox-g-bin"
+programming = "jdk-openjdk lazygit lua-language-server npm python-virtualenv shellcheck rustup"
+system = "efibootmgr kitty kitty-shell-integration mkinitcpio-colors-git mkinitcpio-numlock openssh polkit-kde-agent qemu-full rbw rebuild-detector refind reflector virt-manager xdg-user-dirs xdg-utils zsh"
 
-# We switched back to pulse audio, because its far easier to pass to a VM with single gpu passthrough
-yes | pacman --noconfirm -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils alsa-plugins pamixer
-
-yes | pacman --noconfirm -S bluez numlockx
-yes | pacman --noconfirm -S vivaldi vivaldi-ffmpeg-codecs libnotify lynx
-yes | pacman --noconfirm -S xdg-user-dirs xdg-utils qbittorrent
-yes | pacman --noconfirm -S adobe-source-code-pro-fonts cantarell-fonts ttf-opensans ttf-liberation
-yes | pacman --noconfirm -S kitty kitty-shell-integration vlc
-yes | pacman --noconfirm -S npm python-virtualenv rustup cups
-yes | pacman --noconfirm -S qemu-full virt-manager
-
-yes | pacman -S iptables-nft
+yes | pacman --noconfirm -S $audio $console_utils $device_utils $filesystem $network $programming $system $lib32
 
 # Setup default rust toolchain
 rustup default stable
