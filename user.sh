@@ -22,19 +22,15 @@ git sparse-checkout add patched-fonts/JetBrainsMono
 cd ../
 sudo rm -r nerd-fonts
 
-yay -S --noconfirm ttf-ms-fonts ttf-jetbrains-mono noto-fonts ttf-comic-mono-git
+fonts = "adobe-source-han-sans-otc-fonts adobe-source-sans-fonts noto-fonts noto-fonts-cjk ttf-baekmuk ttf-comic-mono-git ttf-liberation ttf-ms-fonts ttf-opensans"
+passwordManager = "bitwarden rbw rofi-rbw"
+art = "blender krita obs-studio"
+office = "foliate mpv mpv-url mpv-sponsorblock-git obsidian onlyoffice-bin thunar zathura zathura-pdf-mupdf"
+games = "gamemode"
+social = "slack-desktop telegram-desktop webcord-bin"
+util = "coursera-dl-git nitch ty-dlp"
 
-# Some nice packages
-yay -S --noconfirm shellcheck fend ouch monolith 
-yay -S --noconfirm rbw bitwarden onlyoffice-bin firejail
-yay -S --noconfirm github-cli stow nitch lazygit jql flameshot jq
-yay -S --noconfirm picom-git nitrogen waterfox-g-bin
-yay -S --noconfirm mkinitcpio-colors-git mkinitcpio-numlock
-yay -S --noconfirm steam-native-runtime proton-ge-custom-bin protonvpn
-yay -S --noconfirm discord betterdiscord-installer
-yay -S --noconfirm krita mpv mpv-url mpv-sponsorblock-git mpv-thumbfast-git yt-dlp
-yay -S --noconfirm spicetify-cli spotify xdo rofi obsidian obs-studio blender
-yay -S --noconfirm telegram-desktop slack-desktop jdk-openjdk foliate coursera-dl-git
+yay -S --noconfirm $fonts $passwordManager $art $office $games $social $util
 
 
 # Get lemmeknow because its useful
