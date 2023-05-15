@@ -131,12 +131,6 @@ if [[ "$usingNvidia" != "y" && "$usingNvidia" != "yes" && "$usingNvidia" != "Y" 
   rm /etc/pacman.d/hooks/nvidia.hook
 fi
 
-########################################################
-# Install Desktop Environment
-########################################################
-
-yes | pacman -S xclip xorg-server xorg-xsetroot xorg-xinit xorg-xinput 
-yes | pacman -S bspwm sxhkd
 
 ########################################################
 # Add user to groups
