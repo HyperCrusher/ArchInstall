@@ -36,15 +36,6 @@ yay -S --noconfirm krita mpv mpv-url mpv-sponsorblock-git mpv-thumbfast-git yt-d
 yay -S --noconfirm spicetify-cli spotify xdo rofi obsidian obs-studio blender
 yay -S --noconfirm telegram-desktop slack-desktop jdk-openjdk foliate coursera-dl-git
 
-# Eww breaks in the repos sometimes
-git clone https://github.com/timothycates/eww
-cd eww
-cargo build --release --no-default-features --features x11
-cd target/release
-chmod +x ./eww
-mv ./eww /bin/eww
-cd ~
-sudo rm -r eww
 
 # Get lemmeknow because its useful
 git clone https://github.com/swanandx/lemmeknow
