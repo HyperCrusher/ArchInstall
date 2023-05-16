@@ -28,9 +28,9 @@ art="blender krita obs-studio"
 office="foliate mpv mpv-url mpv-sponsorblock-git obsidian onlyoffice-bin protonpvn thunar waterfox-g-bin zathura zathura-pdf-mupdf"
 games="gamemode proton-ge-custom-bin "
 social="slack-desktop telegram-desktop webcord-bin"
-util="coursera-dl-git nitch ty-dlp mkinitcpio-colors-git mkinitcpio-numlock openssh monolith jq jql  "
+util="coursera-dl-git nitch yt-dlp mkinitcpio-colors-git mkinitcpio-numlock openssh monolith jq jql  "
 
-yay -S --noconfirm "$fonts $passwordManager $art $office $games $social $util"
+yay -S --noconfirm $fonts $passwordManager $art $office $games $social $util
 
 # Desktop Environment
 

@@ -100,7 +100,7 @@ network="dnsmasq iptables-nft networkmanager qbittorrent vivaldi vivaldi-ffmpeg-
 programming="jdk-openjdk lazygit lua-language-server npm python-virtualenv shellcheck rustup"
 system="efibootmgr kitty kitty-shell-integration polkit-kde-agent qemu-full rebuild-detector refind reflector virt-manager xdg-user-dirs xdg-utils zsh"
 
-yes | pacman --noconfirm -S "$audio $console_utils $device_utils $filesystem $network $programming $system"
+yes | pacman --noconfirm -S $audio $console_utils $device_utils $filesystem $network $programming $system
 
 # Setup default rust toolchain
 rustup default stable
