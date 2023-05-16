@@ -99,7 +99,6 @@ filesystem="btrfs-progs nfs-utils"
 network="dnsmasq networkmanager qbittorrent vivaldi vivaldi-ffmpeg-codecs"
 programming="jdk-openjdk lazygit lua-language-server npm python-virtualenv shellcheck rustup"
 system="efibootmgr kitty kitty-shell-integration polkit-kde-agent qemu-full rebuild-detector refind reflector virt-manager xdg-user-dirs xdg-utils zsh"
-
 pacman -S iptables-nft
 yes | pacman --noconfirm -S $audio $console_utils $device_utils $filesystem $network $programming $system
 

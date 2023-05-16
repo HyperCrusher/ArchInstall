@@ -45,7 +45,7 @@ themes="breeze-icons gnome-themes-extra gtk-engine-murrine papirus-icon-theme qt
 wm_utils="dunst grim-git slurp-git swaybg wl-clipboard wofi wtype"
 wm="hyprland-nvidia-git hyprland-relative-workspace-bin waybar-hyprland-git xdg-desktop-portal-hyprland-git"
 
-yay -S --noconfirm "$themes $wm_utils $wm"
+yay -S --noconfirm $themes $wm_utils $wm
 
 # Get lemmeknow because its useful
 git clone https://github.com/swanandx/lemmeknow
