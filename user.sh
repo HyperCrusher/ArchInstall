@@ -25,10 +25,10 @@ sudo rm -r nerd-fonts
 fonts = "adobe-source-han-sans-otc-fonts adobe-source-sans-fonts noto-fonts noto-fonts-cjk ttf-baekmuk ttf-comic-mono-git ttf-liberation ttf-ms-fonts ttf-opensans"
 passwordManager = "bitwarden rbw rofi-rbw"
 art = "blender krita obs-studio"
-office = "foliate mpv mpv-url mpv-sponsorblock-git obsidian onlyoffice-bin thunar zathura zathura-pdf-mupdf"
-games = "gamemode"
+office = "foliate mpv mpv-url mpv-sponsorblock-git obsidian onlyoffice-bin protonpvn thunar waterfox-g-bin zathura zathura-pdf-mupdf"
+games = "gamemode proton-ge-custom-bin "
 social = "slack-desktop telegram-desktop webcord-bin"
-util = "coursera-dl-git nitch ty-dlp monolith jq jql  "
+util = "coursera-dl-git nitch ty-dlp mkinitcpio-colors-git mkinitcpio-numlock openssh monolith jq jql  "
 
 yay -S --noconfirm "$fonts $passwordManager $art $office $games $social $util"
 
