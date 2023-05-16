@@ -93,7 +93,7 @@ mkinitcpio -P
 ########################################################
 
 audio = "alsa-plugins alsa-utils pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber"
-console_utils = "bat bottom codespell exa fd fzf git github-cli jq jql monolith proton-ge-custom-bin ripgrep stow unzip"
+console_utils = "bat bottom codespell exa fd fzf git github-cli proton-ge-custom-bin ripgrep stow unzip"
 device_utils = "android-file-transfer cups bluez"
 filesystem = "btrfs-progs nfs-utils"
 network = "dnsmasq iptables-nft networkmanager protonpvn qbittorrent vivaldi vivaldi-ffmpeg-codecs waterfox-g-bin"

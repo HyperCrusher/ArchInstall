@@ -28,7 +28,7 @@ art = "blender krita obs-studio"
 office = "foliate mpv mpv-url mpv-sponsorblock-git obsidian onlyoffice-bin thunar zathura zathura-pdf-mupdf"
 games = "gamemode"
 social = "slack-desktop telegram-desktop webcord-bin"
-util = "coursera-dl-git nitch ty-dlp"
+util = "coursera-dl-git nitch ty-dlp monolith jq jql  "
 
 yay -S --noconfirm "$fonts $passwordManager $art $office $games $social $util"
 
