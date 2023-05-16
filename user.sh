@@ -22,13 +22,13 @@ git sparse-checkout add patched-fonts/JetBrainsMono
 cd ../
 sudo rm -r nerd-fonts
 
-fonts = "adobe-source-han-sans-otc-fonts adobe-source-sans-fonts noto-fonts noto-fonts-cjk ttf-baekmuk ttf-comic-mono-git ttf-liberation ttf-ms-fonts ttf-opensans"
-passwordManager = "bitwarden rbw rofi-rbw"
-art = "blender krita obs-studio"
-office = "foliate mpv mpv-url mpv-sponsorblock-git obsidian onlyoffice-bin protonpvn thunar waterfox-g-bin zathura zathura-pdf-mupdf"
-games = "gamemode proton-ge-custom-bin "
-social = "slack-desktop telegram-desktop webcord-bin"
-util = "coursera-dl-git nitch ty-dlp mkinitcpio-colors-git mkinitcpio-numlock openssh monolith jq jql  "
+fonts="adobe-source-han-sans-otc-fonts adobe-source-sans-fonts noto-fonts noto-fonts-cjk ttf-baekmuk ttf-comic-mono-git ttf-liberation ttf-ms-fonts ttf-opensans"
+passwordManager="bitwarden rbw rofi-rbw"
+art="blender krita obs-studio"
+office="foliate mpv mpv-url mpv-sponsorblock-git obsidian onlyoffice-bin protonpvn thunar waterfox-g-bin zathura zathura-pdf-mupdf"
+games="gamemode proton-ge-custom-bin "
+social="slack-desktop telegram-desktop webcord-bin"
+util="coursera-dl-git nitch ty-dlp mkinitcpio-colors-git mkinitcpio-numlock openssh monolith jq jql  "
 
 yay -S --noconfirm "$fonts $passwordManager $art $office $games $social $util"
 
@@ -41,9 +41,9 @@ cd src/cursors
 chmod +x install.sh
 sudo ./install.sh
 
-themes = "breeze-icons gnome-themes-extra gtk-engine-murrine papirus-icon-theme qt5-wayland qt5ct wt6-wayland qt6ct"
-wm_utils = "dunst grim-git slurp-git swaybg wl-clipboard wofi wtype"
-wm = "hyprland-nvidia-git hyprland-relative-workspace-bin waybar-hyprland-git xdg-desktop-portal-hyprland-git"
+themes="breeze-icons gnome-themes-extra gtk-engine-murrine papirus-icon-theme qt5-wayland qt5ct wt6-wayland qt6ct"
+wm_utils="dunst grim-git slurp-git swaybg wl-clipboard wofi wtype"
+wm="hyprland-nvidia-git hyprland-relative-workspace-bin waybar-hyprland-git xdg-desktop-portal-hyprland-git"
 
 yay -S --noconfirm "$themes $wm_utils $wm"
 

@@ -92,13 +92,13 @@ mkinitcpio -P
 # Install software (through pacman)
 ########################################################
 
-audio = "alsa-plugins alsa-utils pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber"
-console_utils = "bat bottom codespell exa fd fzf git github-cli ripgrep stow unzip"
-device_utils = "android-file-transfer cups bluez"
-filesystem = "btrfs-progs nfs-utils"
-network = "dnsmasq iptables-nft networkmanager qbittorrent vivaldi vivaldi-ffmpeg-codecs"
-programming = "jdk-openjdk lazygit lua-language-server npm python-virtualenv shellcheck rustup"
-system = "efibootmgr kitty kitty-shell-integration polkit-kde-agent qemu-full rebuild-detector refind reflector virt-manager xdg-user-dirs xdg-utils zsh"
+audio="alsa-plugins alsa-utils pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber"
+console_utils="bat bottom codespell exa fd fzf git github-cli ripgrep stow unzip"
+device_utils="android-file-transfer cups bluez"
+filesystem="btrfs-progs nfs-utils"
+network="dnsmasq iptables-nft networkmanager qbittorrent vivaldi vivaldi-ffmpeg-codecs"
+programming="jdk-openjdk lazygit lua-language-server npm python-virtualenv shellcheck rustup"
+system="efibootmgr kitty kitty-shell-integration polkit-kde-agent qemu-full rebuild-detector refind reflector virt-manager xdg-user-dirs xdg-utils zsh"
 
 yes | pacman --noconfirm -S "$audio $console_utils $device_utils $filesystem $network $programming $system $lib32"
 
