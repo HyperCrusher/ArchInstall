@@ -40,6 +40,8 @@ cd Qogir-icon-theme
 cd src/cursors
 chmod +x install.sh
 sudo ./install.sh
+cd ~
+sudo rm -r Qogir-icon-theme
 
 themes="breeze-icons gnome-themes-extra gtk-engine-murrine papirus-icon-theme qt5-wayland qt5ct wt6-wayland qt6ct"
 wm_utils="dunst grim-git slurp-git swaybg wl-clipboard wofi wtype"
