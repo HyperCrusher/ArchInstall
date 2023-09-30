@@ -12,23 +12,16 @@ sudo rm -r yay
 # Setup default rust toolchain
 rustup default stable
 
-# Install nerd-fonts
-git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts
-cd nerd-fonts
-git sparse-checkout add patched-fonts/NerdFontsSymbolsOnly
-git sparse-checkout add patched-fonts/JetBrainsMono
-./install.sh
-
 cd ../
 sudo rm -r nerd-fonts
 
-fonts="adobe-source-han-sans-otc-fonts adobe-source-sans-fonts noto-fonts noto-fonts-cjk ttf-baekmuk ttf-comic-mono-git ttf-liberation ttf-ms-fonts ttf-opensans"
+fonts="adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts adobe-source-han-sans-otc-fonts adobe-source-sans-fonts cantarell-fonts nerd-fonts-git noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-baekmuk ttf-bitstream-vera ttf-comic-mono-git ttf-dejavu ttf-joypixels ttf-liberation ttf-ms-fonts ttf-opensans"
 passwordManager="bitwarden rbw rofi-rbw"
-art="blender krita obs-studio"
-office="foliate mpv mpv-url mpv-sponsorblock-git obsidian onlyoffice-bin protonpvn thunar waterfox-g-bin brave-bin zathura zathura-pdf-mupdf"
-games="gamemode proton-ge-custom-bin "
-social="slack-desktop telegram-desktop webcord-git-screenshare"
-util="coursera-dl-git nitch yt-dlp mkinitcpio-colors-git mkinitcpio-numlock openssh monolith jq jql"
+art="blender godot krita obs-studio"
+office="ffmpegthumbnailer ffmpegthumbs foliate galculator obsidian onlyoffice-bin protonpvn thunar vlc"
+games="gamemode heroic-games-launcher proton-ge-custom-bin steam"
+social="discord-screenaudio"
+util="coursera-dl-git diffutils downgrade jq jql mkinitcpio-colors-git mkinitcpio-numlock monolith nitch openssh p7zip-gui reflector-simple yt-dlp"
 
 yay -S --noconfirm $fonts $passwordManager $art $office $games $social $util
 
@@ -45,7 +38,7 @@ sudo rm -r Qogir-icon-theme
 
 themes="breeze-icons gnome-themes-extra gtk-engine-murrine papirus-icon-theme qt5ct qt6ct"
 wm_utils="dunst flameshot"
-wm="picom-git nitrogen xdo xclip xorg-server xorg-xsetroot xorg-xinit xorg-xinput bspwm sxhkd xdotool"
+wm="picom-git nitrogen xdo xclip xorg-server xsettingsd xorg-xsetroot xorg-xinit xorg-xinput numlockx bspwm sxhkd xdotool"
 
 yay -S --noconfirm $themes $wm_utils $wm
 

@@ -64,6 +64,7 @@ sed -i "s/^#\s*\(%wheel\s\+ALL=(ALL:ALL)\s\+ALL\)/\1/" /etc/sudoers
 # Pacman config
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 sed -i "/#Color/s/^#//" /etc/pacman.conf
+sed -i "/#ILoveCandy/s/^#//" /etc/pacman.conf
 sed -i "/#ParallelDownloads/s/^#//" /etc/pacman.conf
 mkdir -p /etc/pacman.d/hooks
 pacman -Sy
@@ -92,13 +93,13 @@ mkinitcpio -P
 # Install software (through pacman)
 ########################################################
 
-audio="alsa-plugins alsa-utils pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber"
-console_utils="bat bottom codespell exa fd fzf git github-cli ripgrep stow unzip"
-device_utils="android-file-transfer cups bluez"
-filesystem="btrfs-progs nfs-utils"
-network="dnsmasq networkmanager qbittorrent vivaldi vivaldi-ffmpeg-codecs"
-programming="jdk-openjdk lazygit lua-language-server npm python-virtualenv shellcheck rustup"
-system="efibootmgr kitty kitty-shell-integration polkit-kde-agent qemu-full rebuild-detector refind reflector virt-manager xdg-user-dirs xdg-utils zsh"
+audio="alsa-firmware alsa-plugins alsa-utils pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber"
+console_utils="bat bottom codespell eza fd fzf git github-cli ripgrep stow"
+device_utils="android-file-transfer blueman bluez cups upower"
+filesystem="btrfs-progs exfatprogs nfs-utils ntfs-3g"
+network="bind dhclient dnsmasq networkmanager networkmanager-openconnect networkmanager-openvpn qbittorrent vivaldi vivaldi-ffmpeg-codecs"
+programming="jdk-openjdk lazygit lua-language-server npm python-virtualenv rustup shellcheck"
+system="duf efibootmgr hwdetect hwinfo kitty kitty-shell-integration polkit-kde-agent qemu-full rebuild-detector refind reflector tldr usb_modeswitch virt-manager wget xdg-user-dirs xdg-utils zsh"
 pacman -S iptables-nft
 yes | pacman --noconfirm -S $audio $console_utils $device_utils $filesystem $network $programming $system
 
