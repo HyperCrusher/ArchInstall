@@ -99,7 +99,7 @@ device_utils="android-file-transfer blueman bluez cups upower"
 filesystem="btrfs-progs exfatprogs nfs-utils ntfs-3g"
 network="bind dhclient dnsmasq networkmanager networkmanager-openconnect networkmanager-openvpn qbittorrent vivaldi vivaldi-ffmpeg-codecs"
 programming="jdk-openjdk lazygit lua-language-server npm python-virtualenv rustup shellcheck"
-system="duf efibootmgr hwdetect hwinfo kitty kitty-shell-integration polkit-kde-agent qemu-full rebuild-detector refind reflector tldr usb_modeswitch virt-manager wget xdg-user-dirs xdg-utils zsh"
+system="duf efibootmgr hwdetect hwinfo kitty kitty-shell-integration polkit-gnome qemu-full rebuild-detector refind reflector tldr usb_modeswitch virt-manager wget xdg-user-dirs xdg-desktop-portal-gtk xdg-utils zsh"
 pacman -S iptables-nft
 yes | pacman --noconfirm -S $audio $console_utils $device_utils $filesystem $network $programming $system
 

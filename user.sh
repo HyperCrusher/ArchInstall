@@ -38,7 +38,7 @@ sudo rm -r Qogir-icon-theme
 
 themes="breeze-icons gnome-themes-extra gtk-engine-murrine papirus-icon-theme qt5ct qt6ct"
 wm_utils="dunst flameshot"
-wm="picom-git nitrogen xdo xclip xorg-server xsettingsd xorg-xsetroot xorg-xinit xorg-xinput numlockx bspwm sxhkd xdotool"
+wm="picom-git xdo xclip xorg-server xsettingsd xorg-xsetroot xorg-xinit xorg-xinput numlockx   xdotool awesome"
 
 yay -S --noconfirm $themes $wm_utils $wm
 
