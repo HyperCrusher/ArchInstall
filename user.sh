@@ -18,10 +18,10 @@ sudo rm -r nerd-fonts
 fonts="adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts adobe-source-han-sans-otc-fonts adobe-source-sans-fonts cantarell-fonts nerd-fonts-git noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-baekmuk ttf-bitstream-vera ttf-comic-mono-git ttf-dejavu ttf-joypixels ttf-liberation ttf-ms-fonts ttf-opensans"
 passwordManager="bitwarden rbw rofi-rbw"
 art="blender godot krita obs-studio"
-office="ffmpegthumbnailer ffmpegthumbs foliate galculator obsidian onlyoffice-bin protonpvn thunar vlc"
+office="ffmpegthumbnailer ffmpegthumbs foliate galculator obsidian onlyoffice-bin protonpvn thunar vlc tumbler thunar-volman thunar-archive-plugin thunar-media-tags-plugin gvfs ffmpeg-audio-thumbnailer"
 games="gamemode heroic-games-launcher proton-ge-custom-bin steam"
 social="discord-screenaudio"
-util="coursera-dl-git diffutils downgrade jq jql mkinitcpio-colors-git mkinitcpio-numlock monolith nitch openssh p7zip-gui reflector-simple yt-dlp"
+util="coursera-dl-git diffutils downgrade jq jql mkinitcpio-colors-git mkinitcpio-numlock monolith nitch openssh xarchiver reflector-simple yt-dlp"
 
 yay -S --noconfirm $fonts $passwordManager $art $office $games $social $util
 
