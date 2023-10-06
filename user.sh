@@ -21,7 +21,7 @@ art="blender godot krita obs-studio"
 office="ffmpegthumbnailer ffmpegthumbs foliate galculator obsidian onlyoffice-bin protonpvn thunar vlc tumbler thunar-volman thunar-archive-plugin thunar-media-tags-plugin gvfs ffmpeg-audio-thumbnailer"
 games="gamemode heroic-games-launcher proton-ge-custom-bin steam"
 social="discord-screenaudio"
-util="coursera-dl-git diffutils downgrade jq jql mkinitcpio-colors-git mkinitcpio-numlock monolith nitch openssh xarchiver reflector-simple yt-dlp"
+util="coursera-dl-git diffutils downgrade jq jql mkinitcpio-colors-git mkinitcpio-numlock monolith nitch openssh xarchiver reflector-simple yt-dlp mintstick"
 
 yay -S --noconfirm $fonts $passwordManager $art $office $games $social $util
 
