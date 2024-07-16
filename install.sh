@@ -14,20 +14,7 @@ kernel=$(gum choose --header "Linux Kernel" "default" "zen" "lqx")
 
 if [ "$filesystem" = "btrfs" ]; then
   blockdevice=$(gum input --prompt.foreground "#0FF" --prompt "Btrfs block device:   " --placeholder "/dev/sda")
-  mount "$blockdevice" /mnt
-  btrfs subvolume create /mnt/@
-  btrfs subvolume create /mnt/@home
-  btrfs subvolume create /mnt/@varlog
-  btrfs subvolume create /mnt/@snapshots
-  umount /mnt
-
-  mountOpts="noatime,compress=lzo,space_cache=v2"
-
-  mount -o "$mountOpts,subvol=@" "$blockdevice" /mnt
-  mkdir -p /mnt/{boot,home,.snapshots,var/log}
-  mount -o "$mountOpts,subvol=@home" "$blockdevice" /mnt/home
-  mount -o "$mountOpts,subvol=@varlog" "$blockdevice" /mnt/var/log
-  mount -o "$mountOpts,subvol=@snapshots" "$blockdevice" /mnt/.snapshots
+  gum spin --title "Setting up btrfs..." -- ./src/filesystem/btrfs.sh "$blockdevice"
 fi
 
 timedatectl set-ntp true
