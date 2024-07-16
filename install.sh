@@ -23,4 +23,7 @@ gum spin --title "Installing Linux..." -- pacstrap /mnt base linux-firmware sof-
 
 gum spin --title "Installing Kernel..." -- ./src/setup/kernel.sh "$kernel"
 
+dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+cp -R "$dir" /mnt/archinstall
+
 arch-chroot /mnt /archinstall/src/root.sh

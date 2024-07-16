@@ -21,7 +21,8 @@ fi
 if [ "$kernel" = "lqx" ]; then
     pacman-key --keyserver $keyServer --recv-keys $lqxGpg
     pacman-key --lsign-key $lqxGpg
-    pacmanLqx="[liquorix]\nServer = htttps://liquorix.net/archlinux/\$repo/\$arch"
+    pacmanLqx="[liquorix]
+Server = htttps://liquorix.net/archlinux/\$repo/\$arch"
     echo "$pacmanLqx" | sudo tee -a /mnt/etc/pacman.conf 
     pacstrap /mnt linux-lqx linux-lqx-headers
 fi
