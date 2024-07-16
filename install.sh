@@ -19,26 +19,8 @@ fi
 
 gum spin --title "Initial Setup..." -- ./src/setup/initial.sh
 
+gum spin --title "Installing Linux..." -- pacstrap /mnt base linux-firmware sof-firmware base-devel refind efibootmgr neovim
 
-pacstrap /mnt base linux-firmware sof-firmware base-devel refind efibootmgr neovim
-
-lqxGpg='9AE4078033F8024D'
-keyServer='hkps://keyserver.ubuntu.com'
-
-if [ "$kernel" = "default" ]; then
-  pacstrap /mnt linux linux-headers
-fi
-
-if [ "$kernel" = "zen" ]; then
-  pacstrap /mnt linux-zen linux-zen-headers
-fi
-
-if [ "$kernel" = "lqx" ]; then
-    pacman-key --keyserver $keyServer --recv-keys $lqxGpg
-    pacman-key --lsign-key $lqxGpg
-    pacmanLqx="[liquorix]\nServer = htttps://liquorix.net/archlinux/\$repo/\$arch"
-    echo "$pacmanLqx" | sudo tee -a /mnt/etc/pacman.conf 
-    pacstrap /mnt linux-lqx linux-lqx-headers
-fi
+gum spin --title "Installing Kernel..." -- ./src/setup/kernel.sh "$kernel"
 
 arch-chroot /mnt /archinstall/src/root.sh
