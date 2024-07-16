@@ -1,6 +1,7 @@
 #! /bin/bash
 pacman -Sy
 yes | pacman -S git gum
+clear
 
 if ! gum confirm "Are all drives formatted, filesystems made, and mounted?"; then
   clear
@@ -9,6 +10,7 @@ if ! gum confirm "Are all drives formatted, filesystems made, and mounted?"; the
 fi
 
 filesystem=$(gum choose --header "Filesystem" "ext4" "btrfs")
+kernel=$(gum choose --header "Linux Kernel" "default" "zen" "lqx")
 
 if [ "$filesystem" = "btrfs" ]; then
   blockdevice=$(gum input --prompt.foreground "#0FF" --prompt "Btrfs block device:   " --placeholder "/dev/sda")
