@@ -10,12 +10,14 @@ kernel="$1"
 lqxGpg='9AE4078033F8024D'
 keyServer='hkps://keyserver.ubuntu.com'
 
-
+list_timezones() {
+    find /usr/share/zoneinfo -type f | sed 's|/usr/share/zoneinfo/||'
+}
 timezones=()
 
 while IFS= read -r timezone; do
     timezones+=("$timezone")
-done < <(timedatectl list-timezones)
+done < <(list_timezones)
 
 Usertimezone=$(gum choose --limit 1 --header "Choose your timezone (use / to search)" "${timezones[@]}")
 
