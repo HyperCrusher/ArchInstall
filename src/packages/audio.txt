@@ -1,0 +1,1 @@
+alsa-firmware alsa-plugins alsa-utils pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumbler

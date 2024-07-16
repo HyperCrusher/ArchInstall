@@ -1,0 +1,1 @@
+duf hwdetect hwinfo kitty polkit-gnome rebuild-detector reflector tldr usb_modeswitch wget xdg-user-dirs xdg-desktop-portal-gtk xdg-utils zsh

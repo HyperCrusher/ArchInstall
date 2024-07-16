@@ -1,0 +1,1 @@
+bat bottom eza fd fzf ripgrep stow
