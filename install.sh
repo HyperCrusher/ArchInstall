@@ -17,15 +17,9 @@ if [ "$filesystem" = "btrfs" ]; then
   gum spin --title "Setting up btrfs..." -- ./src/filesystem/btrfs.sh "$blockdevice"
 fi
 
-timedatectl set-ntp true
+gum spin --title "Initial Setup..." -- ./src/setup/initial.sh
 
-pacman-key --init
-pacman-key --populate archlinux
 
-rm /mnt/etc/pacman.conf
-cp ./configs/pacman.conf /mnt/etc/pacman.conf
-
-kernel=$(gum choose --header "Linux Kernel" "default" "zen" "lqx")
 pacstrap /mnt base linux-firmware sof-firmware base-devel refind efibootmgr neovim
 
 lqxGpg='9AE4078033F8024D'
@@ -46,10 +40,5 @@ if [ "$kernel" = "lqx" ]; then
     echo "$pacmanLqx" | sudo tee -a /mnt/etc/pacman.conf 
     pacstrap /mnt linux-lqx linux-lqx-headers
 fi
-
-genfstab -U /mnt >> /mnt/etc/fstab
-
-dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-cp -R "$dir" /mnt/archinstall
 
 arch-chroot /mnt /archinstall/src/root.sh
