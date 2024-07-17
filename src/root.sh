@@ -133,6 +133,9 @@ gum spin --title "Setting Users up..." -- bash -c '
 
 mkdir -p /etc/pacman.d/hooks
 
+
+pacman -Sy
+
 if [[ $usingNvidia ]]; then
   gum spin --title "Setting up nvidia..." -- bash -c '
     yes | pacman -S nvidia-dkms nvidia-utils nvidia-settings lib32-nvidia-utils
