@@ -37,7 +37,7 @@ userPass=$(gum input --prompt.foreground "#0FF" --prompt "$username's Password: 
 
 gum confirm "Using a Nvidia gpu?" && usingNvidia=1
 
-chosenCategories=$(gum choose --no-limit --header "System Software Categories" --selected "Audio,Git,Console_Utils,Extra_Filesystems,Networking" "Audio" "Bluetooth" "Printing""Git" "Console_Utils" "Extra_Filesystems" "Networking")
+chosenCategories=$(gum choose --no-limit --header "System Software Categories" --selected "Audio,Git,Console_Utils,Extra_Filesystems,Networking" "Audio" "Bluetooth" "Printing" "Git" "Console_Utils" "Extra_Filesystems" "Networking")
 IFS=$'\n' read -r -d '' -a chosenCategories <<<"$chosenCategories"
 
 packageList=""
@@ -45,10 +45,10 @@ for category in "${chosenCategories[@]}"; do
     file_name=$(echo "$category" | tr '[:upper:]' '[:lower:]').txt
     if [[ -f "apps/$file_name" ]]; then
         packageList+=$' '
-        packageList+=$(<"../src/packages/$file_name")
+        packageList+=$(<"./src/packages/$file_name")
     fi
 done
 
 packageList+=$' '
-packageList+=$(<"../src/packages/system.txt")
+packageList+=$(<"./src/packages/system.txt")
 echo "$packageList"
