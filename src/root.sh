@@ -72,7 +72,6 @@ done
 packageList+=$(<"archinstall/src/packages/system.txt")
 
 gum spin --title "Setting up timezone..." -- ln -sf "/usr/share/zoneinfo/$userTimezone" /etc/localtime
-heclock --systohc
 hwclock --systohc
 
 for locale in "${userLocales[@]}"; do
@@ -133,6 +132,14 @@ gum spin --title "Setting Users up..." -- bash -c '
 
 mkdir -p /etc/pacman.d/hooks
 
+if [[ $kernel = "lqx" ]]; then
+    pacman-key --keyserver $keyServer --recv-keys $lqxGpg
+    pacman-key --lsign-key $lqxGpg
+    pacmanLqx="
+[liquorix]
+Server = htttps://liquorix.net/archlinux/\$repo/\$arch"
+    echo "$pacmanLqx" | sudo tee -a /mnt/etc/pacman.conf 
+fi
 
 pacman -Sy
 
