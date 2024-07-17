@@ -73,6 +73,7 @@ packageList+=$(<"archinstall/src/packages/system.txt")
 
 gum spin --title "Setting up timezone..." -- ln -sf "/usr/share/zoneinfo/$userTimezone" /etc/localtime
 heclock --systohc
+hwclock --systohc
 
 for locale in "${userLocales[@]}"; do
     sed -i "/$locale/s/^#//g" /etc/locale.gen
