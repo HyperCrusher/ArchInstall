@@ -70,4 +70,81 @@ for category in "${chosenCategories[@]}"; do
 done
 
 packageList+=$(<"archinstall/src/packages/system.txt")
-echo "$packageList"
+
+gum spin --title "Setting up timezone..." -- ln -sf "/usr/share/zoneinfo/$userTimezone" /etc/localtime
+heclock --systohc
+
+for locale in "${userLocales[@]}"; do
+    sed -i "/$locale/s/^#//g" /etc/locale.gen
+done
+
+cat <<EOF >> /etc/locale.conf
+LANG=$primaryLocale
+LC_COLLATE=C
+LC_CTYPE=$primaryLocale
+LC_MESSAGES=$primaryLocale
+LC_MONETARY=$primaryLocale
+LC_NUMERIC=$primaryLocale
+LC_TIME=$primaryLocale
+EOF
+
+echo "KEYMAP=$userKeymap" >> /etc/vconsole.conf
+
+gum spin --title "Setting up languages..." -- locale-gen
+
+# Add colors to vconsole
+colors=(
+  "16161e"
+  "db4b4b"
+  "9ece6a"
+  "ff9e64"
+  "7aa2f7"
+  "bb9af7"
+  "2ac3de"
+  "c0caf5"
+  "a9b1d6"
+  "db4b4b"
+  "9ece6a"
+  "ff9e64"
+  "7aa2f7"
+  "bb9af7"
+  "2ac3de"
+  "c0caf5"
+)
+
+for i in {0..15}; do
+ echo "COLOR_$i=${colors[i]}" >> /etc/vconsole.conf
+done
+
+gum spin --title "Setting host up..." -- bash -c '
+    echo "$1" >> /etc/hostname
+    echo "127.0.0.1 localhost" >> /etc/hosts
+    echo "::1 localhost" >> /etc/hosts
+    echo "127.0.1.1 $1.localdomain $1" >> /etc/hosts
+' -- "$hostname"
+
+gum spin --title "Setting Users up..." -- bash -c '
+    echo -e "$1\n$1" | passwd
+    useradd --badname -m -g users -G wheel "$2"
+    echo -e "$3\n$3" | passwd "$2"
+    sed -i "s/^#\s*\(%wheel\s\+ALL=(ALL:ALL)\s\+ALL\)/\1/" /etc/sudoers
+' -- "$rootPass" "$username" "$userPass"
+
+mkdir -p /etc/pacman.d/hooks
+
+if [[ $usingNvidia ]]; then
+  gum spin --title "Setting up nvidia..." -- bash -c '
+    yes | pacman -S nvidia-dkms nvidia-utils nvidia-settings lib32-nvidia-utils
+    sed -i "s/^MODULES=(\(.*\))/MODULES=(\1 nvidia nvidia_modeset nvidia_uvm nvidia_drm)/" /etc/mkinitcpio.conf
+    mkdir -p /etc/modprobe.d/
+    touch /etc/modprobe.d/nvidia.conf
+    echo "options nvidia-drm modeset=1" >> /etc/modprobe.d/nvidia.conf
+  '
+fi
+
+sed -i 's/^MODULES=(\(.*\))/MODULES=(\1 btrfs)/' /etc/mkinitcpio.conf
+
+gum spin --title "Creating initramfs..." -- mkinitcpio -P
+
+gum spin --title "Installing packages" -- yes | pacman -S "$packageList"
+gum spin --title "Installing packages" -- rustup default stable
