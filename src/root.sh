@@ -30,7 +30,7 @@ IFS=$'\n' read -r -d '' -a userLocales <<<"$userLocales"
 
 primaryLocale=$(gum choose --limit 1 --header "Primary Language" "${userLocales[@]}")
 
-hostname=$(gum input --prompt.foreground "#0FF" --prompt "Hostname:" --placeholder "arch")
+hostname=$(gum input --prompt.foreground "#0FF" --prompt "Hostname: " --placeholder "arch")
 rootPass=$(gum input --prompt.foreground "#0FF" --prompt "Root Password: " --password)
 username=$(gum input --prompt.foreground "#0FF" --prompt "Username: " --placeholder "Hyper")
 userPass=$(gum input --prompt.foreground "#0FF" --prompt "$username's Password: " --password)
@@ -43,12 +43,11 @@ IFS=$'\n' read -r -d '' -a chosenCategories <<<"$chosenCategories"
 packageList=""
 for category in "${chosenCategories[@]}"; do
     file_name=$(echo "$category" | tr '[:upper:]' '[:lower:]').txt
-    if [[ -f "apps/$file_name" ]]; then
+    if [[ -f "archinstall/src/packages/$file_name" ]]; then
+        packageList+=$(<"archinstall/src/packages/$file_name")
         packageList+=$' '
-        packageList+=$(<"./src/packages/$file_name")
     fi
 done
 
-packageList+=$' '
-packageList+=$(<"./src/packages/system.txt")
+packageList+=$(<"archinstall/src/packages/system.txt")
 echo "$packageList"
