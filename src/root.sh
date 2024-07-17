@@ -138,7 +138,7 @@ if [[ $kernel = "lqx" ]]; then
     pacmanLqx="
 [liquorix]
 Server = https://liquorix.net/archlinux/\$repo/\$arch"
-    gum spin --title "Setting up lqx..." -- echo "$pacmanLqx" | sudo tee -a /mnt/etc/pacman.conf 
+    gum spin --title "Setting up lqx..." -- echo "$pacmanLqx" | sudo tee -a /etc/pacman.conf 
 fi
 
 gum spin --title "Updating pacman db..." -- pacman -Sy
