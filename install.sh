@@ -19,7 +19,7 @@ fi
 
 gum spin --title "Initial Setup..." -- ./src/setup/initial.sh
 
-gum spin --title "Installing Linux..." -- pacstrap /mnt base linux-firmware sof-firmware base-devel refind efibootmgr neovim gum
+gum spin --title "Installing Linux..." -- pacstrap /mnt base linux-firmware sof-firmware base-devel refind efibootmgr neovim gum mkinitcpio
 
 gum spin --title "Installing Kernel..." -- ./src/setup/kernel.sh "$kernel"
 
