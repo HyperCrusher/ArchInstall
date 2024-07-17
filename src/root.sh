@@ -133,15 +133,15 @@ gum spin --title "Setting Users up..." -- bash -c '
 mkdir -p /etc/pacman.d/hooks
 
 if [[ $kernel = "lqx" ]]; then
-    pacman-key --keyserver $keyServer --recv-keys $lqxGpg
-    pacman-key --lsign-key $lqxGpg
+    gum spin --title "Setting up lqx..." -- pacman-key --keyserver $keyServer --recv-keys $lqxGpg
+    gum spin --title "Setting up lqx..." -- pacman-key --lsign-key $lqxGpg
     pacmanLqx="
 [liquorix]
 Server = https://liquorix.net/archlinux/\$repo/\$arch"
-    echo "$pacmanLqx" | sudo tee -a /mnt/etc/pacman.conf 
+    gum spin --title "Setting up lqx..." -- echo "$pacmanLqx" | sudo tee -a /mnt/etc/pacman.conf 
 fi
 
-pacman -Sy
+gum spin --title "Updating pacman db..." -- pacman -Sy
 
 if [[ $usingNvidia ]]; then
   gum spin --title "Setting up nvidia..." -- bash -c '
