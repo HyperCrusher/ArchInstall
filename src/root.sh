@@ -37,9 +37,9 @@ while IFS= read -r timezone; do
     timezones+=("$timezone")
 done < <(list_timezones)
 
-Usertimezone=$(gum choose --limit 1 --header "Choose your timezone (use / to search)" "${timezones[@]}")
+userTimezone=$(gum choose --limit 1 --header "Choose your timezone (use / to search)" "${timezones[@]}")
 
-locales=$(awk '/^#[^ ]/ { print substr($0, 2) }' /etc/locale.gen)
+locales=$(awk '/^#[^ ]/ { print substr($1, 2) }' /etc/locale.gen)
 
 IFS=$'\n' read -r -d '' -a localeArr <<<"$locales"
 
@@ -48,6 +48,7 @@ IFS=$'\n' read -r -d '' -a userLocales <<<"$userLocales"
 
 primaryLocale=$(gum choose --limit 1 --header "Primary Language" "${userLocales[@]}")
 
+userKeymap=$(ask "Keymap: " "us" false)
 hostname=$(ask "Hostname: " "arch" false)
 rootPass=$(ask "Root Password: " "" true)
 username=$(ask "Username: " "Hyper" false)
