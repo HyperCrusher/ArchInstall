@@ -29,7 +29,7 @@ ask() {
 }
 
 list_timezones() {
-    find /usr/share/zoneinfo -type f | sed 's|/usr/share/zoneinfo/||'
+    find /usr/share/zoneinfo -type f | grep -vE 'posix/|right/' | sed 's|/usr/share/zoneinfo/||'
 }
 timezones=()
 
