@@ -17,11 +17,13 @@ if [ "$filesystem" = "btrfs" ]; then
   gum spin --title "Setting up btrfs..." -- ./src/filesystem/btrfs.sh "$blockdevice"
 fi
 
-gum spin --title "Initial Setup..." -- ./src/setup/initial.sh
+gum spin --title "Installing OS Base..." -- bash -c '
+pacman-key --init
+pacman-key --populate archlinux
+pacstrap /mnt base linux-firmware sof-firmware base-devel refind efibootmgr neovim gum mkinitcpio
+'
 
-gum spin --title "Installing Linux..." -- pacstrap /mnt base linux-firmware sof-firmware base-devel refind efibootmgr neovim gum mkinitcpio
-rm /mnt/etc/pacman.conf
-cp configs/pacman.conf /mnt/etc/pacman.conf
+gum spin --title "Initial Setup..." -- ./src/setup/initial.sh
 
 gum spin --title "Installing Kernel..." -- ./src/setup/kernel.sh "$kernel"
 
