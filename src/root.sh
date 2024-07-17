@@ -137,7 +137,7 @@ if [[ $kernel = "lqx" ]]; then
     pacman-key --lsign-key $lqxGpg
     pacmanLqx="
 [liquorix]
-Server = htttps://liquorix.net/archlinux/\$repo/\$arch"
+Server = https://liquorix.net/archlinux/\$repo/\$arch"
     echo "$pacmanLqx" | sudo tee -a /mnt/etc/pacman.conf 
 fi
 
