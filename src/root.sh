@@ -157,5 +157,5 @@ sed -i 's/^MODULES=(\(.*\))/MODULES=(\1 btrfs)/' /etc/mkinitcpio.conf
 
 gum spin --title "Creating initramfs..." -- mkinitcpio -P
 
-gum spin --title "Installing packages" -- yes | pacman -S -q $packageList
+gum spin --title "Installing packages" -- yes | pacman -S $packageList > /dev/null
 gum spin --title "Installing packages" -- rustup default stable
