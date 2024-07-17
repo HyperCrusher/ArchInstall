@@ -135,7 +135,7 @@ mkdir -p /etc/pacman.d/hooks
 if [[ $kernel = "lqx" ]]; then
     gum spin --title "Setting up lqx..." -- pacman-key --keyserver $keyServer --recv-keys $lqxGpg
     gum spin --title "Setting up lqx..." -- pacman-key --lsign-key $lqxGpg
-    pacmanLqx="
+    gum spin --title "Setting up lqx..." -- pacmanLqx="
 [liquorix]
 Server = https://liquorix.net/archlinux/\$repo/\$arch"
     gum spin --title "Setting up lqx..." -- echo "$pacmanLqx" | sudo tee -a /etc/pacman.conf 
