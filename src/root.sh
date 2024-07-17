@@ -10,6 +10,24 @@ kernel="$1"
 lqxGpg='9AE4078033F8024D'
 keyServer='hkps://keyserver.ubuntu.com'
 
+# Prevent blank inputs
+ask() {
+    local prompt_text="$1"
+    local placeholder_text="$2"
+    local is_password="$3"
+    local input=""
+
+    while [ -z "$input" ]; do
+        if [ "$is_password" = true ]; then
+            input=$(gum input --prompt.foreground "#0FF" --prompt "$prompt_text" --password)
+        else
+            input=$(gum input --prompt.foreground "#0FF" --prompt "$prompt_text" --placeholder "$placeholder_text")
+        fi
+    done
+
+    echo "$input"
+}
+
 list_timezones() {
     find /usr/share/zoneinfo -type f | sed 's|/usr/share/zoneinfo/||'
 }
@@ -30,10 +48,11 @@ IFS=$'\n' read -r -d '' -a userLocales <<<"$userLocales"
 
 primaryLocale=$(gum choose --limit 1 --header "Primary Language" "${userLocales[@]}")
 
-hostname=$(gum input --prompt.foreground "#0FF" --prompt "Hostname: " --placeholder "arch")
-rootPass=$(gum input --prompt.foreground "#0FF" --prompt "Root Password: " --password)
-username=$(gum input --prompt.foreground "#0FF" --prompt "Username: " --placeholder "Hyper")
-userPass=$(gum input --prompt.foreground "#0FF" --prompt "$username's Password: " --password)
+hostname=$(ask "Hostname: " "arch" false)
+rootPass=$(ask "Root Password: " "" true)
+username=$(ask "Username: " "Hyper" false)
+userPass=$(ask "$username's Password: " "" true)
+
 
 gum confirm "Using a Nvidia gpu?" && usingNvidia=1
 
