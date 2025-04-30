@@ -4,7 +4,6 @@ hwclock --systohc
 
 # Setup desired locales
 sed -i "/en_US.UTF-8/s/^#//g" /etc/locale.gen
-sed -i "/ja_JP.UTF-8/s/^#//g" /etc/locale.gen
 
 locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
@@ -37,11 +36,11 @@ for i in {0..15}; do
 done
 
 # Hosts
-echo "arch" >> /etc/hostname
+echo "Nexus" >> /etc/hostname
 
 echo "127.0.0.1   localhost" >> /etc/hosts
 echo "::1         localhost" >> /etc/hosts
-echo "127.0.1.1   arch.localdomain arch" >> /etc/hosts
+echo "127.0.1.1   nexus.localdomain nexus" >> /etc/hosts
 
 # Root Password
 clear
@@ -95,11 +94,11 @@ mkinitcpio -P
 
 audio="alsa-firmware alsa-plugins alsa-utils pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber"
 console_utils="bat bottom codespell eza fd fzf git github-cli ripgrep stow"
-device_utils="android-file-transfer blueman bluez cups upower"
+device_utils="android-file-transfer blueman bluez cups upower power-profiles-daemon"
 filesystem="btrfs-progs exfatprogs nfs-utils ntfs-3g"
-network="bind dhclient dnsmasq networkmanager networkmanager-openconnect networkmanager-openvpn qbittorrent vivaldi vivaldi-ffmpeg-codecs"
-programming="jdk-openjdk lazygit lua-language-server npm python-virtualenv rustup shellcheck"
-system="duf efibootmgr hwdetect hwinfo kitty kitty-shell-integration polkit-gnome qemu-full rebuild-detector refind reflector tldr usb_modeswitch virt-manager wget xdg-user-dirs xdg-desktop-portal-gtk xdg-utils zsh"
+network="bind dhclient dnsmasq networkmanager networkmanager-openconnect qbittorrent firefox"
+programming="lazygit npm shellcheck"
+system="efibootmgr hwdetect hwinfo ghostty qemu-full rebuild-detector refind reflector tldr usb_modeswitch virt-manager wget xdg-user-dirs xdg-utils zsh"
 pacman -S iptables-nft
 yes | pacman --noconfirm -S $audio $console_utils $device_utils $filesystem $network $programming $system
 
@@ -135,12 +134,6 @@ usermod -aG lp $username
 ########################################################
 # Enable systemd services
 ########################################################
-
-systemctl enable libvirtd
-systemctl enable NetworkManager
-systemctl enable avahi-daemon
-systemctl enable sshd
-systemctl enable reflector.timer
 
 # Bootloader
 clear
